@@ -4,7 +4,8 @@ from core.config import settings
 
 group_id = ads_power.AdsPower.search_group_id(settings.ADS_GROUP_NAME)
 user_proxy_config = s5_proxy.get_proxy()
-info_email, info_data = search_one_data()
+info_one, info_data = search_one_data()
+info_email = info_one["邮箱----密码"]
 email, password = info_email.split("----")
 print(email, password)
 # puuhxwbmts@hotmail.com----Mc7FxjqR

@@ -22,7 +22,7 @@ def save_file(data: pd.DataFrame, path):
 def search_one_data():
     result = read_file(settings.FILE_PATH)
     df_filtered = result[result['is_completed'].isnull()]
-    return df_filtered.iloc[0]["邮箱----密码"], result
+    return df_filtered.iloc[0], result
 
 
 def search_index(value, data: pd.DataFrame):
