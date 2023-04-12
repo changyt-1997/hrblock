@@ -24,8 +24,10 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="userName"]/span/input').send_keys(username)
         self.driver.find_element(By.XPATH, '//*[@id="showhideNew"]/button').click()
 
-    def run(self):
+    def run(self, info_one):
         self.home_to_create_an_account()
+        self.register_email()
+
 
 if __name__ == '__main__':
     operate = AutoOperate("127.0.0.1:50761")
