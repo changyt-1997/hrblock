@@ -63,7 +63,7 @@ class AdsPower(object):
             # "headless": 1
         }
         result = AdsPower.get(AdsPower.request_browser_start, data)
-        return result["data"]["ws"]
+        return result["data"]["ws"]["selenium"]
 
     @staticmethod
     def delete_account(user_ids):
