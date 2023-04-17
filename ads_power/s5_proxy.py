@@ -14,6 +14,17 @@ def get_proxy():
         print("获取代理失败：", str(e))
 
 
+def get_proxy_guys():
+    """
+209.248.72.241:8083
+    :return:
+    """
+    data = {"proxy_type": "socks5", "proxy_host": "209.248.72.241",
+            "proxy_port": "9093", "proxy_user": "pg_bgadkbc2.custom1",
+            "proxy_password": "45201981fa", "proxy_soft": "other"}
+    return data
+
+
 if __name__ == '__main__':
     result = get_proxy()
     print(result)

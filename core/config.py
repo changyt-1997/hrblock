@@ -13,7 +13,7 @@ class Settings(object):
     S5PROXY_URL = env.str("S5PROXY_URL", None)
     ADS_POWER_URL = env.str("ADS_POWER_URL", None)
     ADS_POWER_KEY = env.str("ADS_POWER_KEY", None)
-    ADS_GROUP_NAME = env.str("ADS_GROUP_NAME", None)
+    ADS_GROUP_NAME = env.str("ADS_GROUP_NAME", "auto_register")
     BROWSER_KERNEL_CONFIG = env.str("BROWSER_KERNEL_CONFIG", "111")
 
     # file

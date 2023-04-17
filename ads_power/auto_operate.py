@@ -64,9 +64,9 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="twoStepVerify"]/hrb-card-content/hrb-link/a').click()
 
     def start_on_your_taxes(self):
-        # self.driver.find_element(By.XPATH, '//*[@id="imbHero"]/button').click()
-        # self.driver.find_element(By.XPATH, '//*[@id="imbPsBtnFour"]').click()
-        # self.driver.find_element(By.XPATH, '//*[@id="imbPsNext"]/button').click()
+        self.driver.find_element(By.XPATH, '//*[@id="imbHero"]/button').click()
+        self.driver.find_element(By.XPATH, '//*[@id="imbPsBtnFour"]').click()
+        self.driver.find_element(By.XPATH, '//*[@id="imbPsNext"]/button').click()
 
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock4"]/a').click()
@@ -287,14 +287,14 @@ class AutoOperate(object):
         return False
 
     def run(self, info_one):
-        # self.home_to_create_an_account()
-        # info_email = info_one["邮箱----密码"]
-        # email, password = info_email.split("----")
-        # try:
-        #     self.register_email(email, info_one["账号"], info_one["密码"])
-        # except Exception as e:
-        #     print("账号已存在，进入登录流程")
-        #     self.home_to_login(info_one["账号"], info_one["密码"], email, password)
+        self.home_to_create_an_account()
+        info_email = info_one["邮箱----密码"]
+        email, password = info_email.split("----")
+        try:
+            self.register_email(email, info_one["账号"], info_one["密码"])
+        except Exception as e:
+            print("账号已存在，进入登录流程")
+            self.home_to_login(info_one["账号"], info_one["密码"], email, password)
         self.start_on_your_taxes()
         self.your_info(info_one["名"], info_one["姓"], info_one["生日"],
                        int(info_one["社保号"]), int(info_one["电话"]), info_one["街道"], int(info_one["邮编"]), info_one)
@@ -302,7 +302,7 @@ class AutoOperate(object):
 
 if __name__ == '__main__':
     # qrmhayfbsyc@hotmail.com CFQCPD76J
-    operate = AutoOperate("127.0.0.1:51625")
+    operate = AutoOperate("27.0.0.1:56020")
     info_one, info_data = search_one_data()
     operate.run(info_one)
     # operate.get_img_code("/captcha/image/MmhESDZPamxCSllpYWJpc1o3Lzg1SG5ia04yYnFSVTdFWVBXeGtEWERiYzRMRWRycXYvVEVkWlRBRnZ6YnA5TnNlNW1BYmFnTEdlMElvMEFVbWQrbzdId0RNb0xBRmIzMGpoTXJSTlh2a1k9")

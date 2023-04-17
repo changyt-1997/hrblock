@@ -6,7 +6,7 @@ from core.config import settings
 
 def created_ads_power():
     group_id = ads_power_instance.AdsPower.search_group_id(settings.ADS_GROUP_NAME)
-    user_proxy_config = s5_proxy.get_proxy()
+    user_proxy_config = s5_proxy.get_proxy_guys()
     info_one, info_data = search_one_data()
     info_email = info_one["邮箱----密码"]
     email, password = info_email.split("----")
