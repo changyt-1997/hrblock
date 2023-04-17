@@ -1,6 +1,6 @@
 import requests
 from core.config import settings
-
+from core.logger_info import logger
 
 def get_proxy():
     try:
@@ -9,9 +9,10 @@ def get_proxy():
         data = {"proxy_type": "socks5", "proxy_host": host,
                 "proxy_port": port.strip(), "proxy_user": "ExemplWinke@gmail.com",
                 "proxy_password": "Qwe123321..", "proxy_soft": "other"}
+        logger.info(f"成功获取s5代理")
         return data
     except Exception as e:
-        print("获取代理失败：", str(e))
+        logger.error(f"获取代理失败：{str(e)}")
 
 
 def get_proxy_guys():
@@ -22,6 +23,7 @@ def get_proxy_guys():
     data = {"proxy_type": "socks5", "proxy_host": "209.248.72.241",
             "proxy_port": "9093", "proxy_user": "pg_bgadkbc2.custom1",
             "proxy_password": "45201981fa", "proxy_soft": "other"}
+    logger.info(f"成功获取guys代理")
     return data
 
 

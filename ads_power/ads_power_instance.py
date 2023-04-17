@@ -1,5 +1,6 @@
 import requests
 from core.config import settings
+from core.logger_info import logger
 
 
 class AdsPower(object):
@@ -21,10 +22,11 @@ class AdsPower(object):
         try:
             res = requests.request(method=request_data['method'], url=url, **param_data).json()
             if res["code"] != 0:
-                print(f"请求失败：{request_data}, 数据：{data}, 返回数据：{res}")
+                logger.error(f"请求失败：{request_data}, 数据：{data}, 返回数据：{res}")
+                raise SystemExit
         except Exception as e:
-            print(f"请求失败：{request_data}, 数据：{data}")
-            return None
+            logger.error(f"请求失败：{request_data}, 数据：{data}")
+            raise SystemExit
         return res
 
     @staticmethod
@@ -50,6 +52,7 @@ class AdsPower(object):
 
     @staticmethod
     def search_group_id(group_name):
+        logger.info(f"开始搜索可创建的分组：{settings.ADS_GROUP_NAME}")
         data = {
             "group_name": group_name,
         }
