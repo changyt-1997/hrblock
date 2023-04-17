@@ -1,26 +1,27 @@
 import time
 from io import BytesIO
 import pytesseract
-import requests
 from seleniumwire import webdriver
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from PIL import Image, ImageFilter, ImageEnhance
-
+from core.config import settings
 from core.information import search_one_data
 from core.hotemail import get_mail
 from core.zip_info import get_zip_info
+
+
+pytesseract.pytesseract.tesseract_cmd = settings.TESSERACT_PATH
 
 
 class AutoOperate(object):
 
     def __init__(self, address):
         options = webdriver.ChromeOptions()
-        # options.add_experimental_option("debuggerAddress", address)
-        # self.driver = webdriver.Chrome(options=options)
-        # self.driver.set_window_size(1200, 1050)
+        options.add_experimental_option("debuggerAddress", address)
+        self.driver = webdriver.Chrome(options=options)
+        self.driver.set_window_size(1200, 1050)
 
-        self.driver = webdriver.Chrome("chromedriver")
+        # self.driver = webdriver.Chrome("chromedriver")
         self.driver.implicitly_wait(120)
 
     def home_to_create_an_account(self):
@@ -70,9 +71,8 @@ class AutoOperate(object):
 
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock4"]/a').click()
-        self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[1]/a').click()
-        self.driver.find_element(By.XPATH,
-                                 '//*[@id="StackPanelproformaimport"]/div/div[4]/div/fieldset/div/div[3]/div/div/div/div/label').click()
+        # To help us get you started,
+        self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonOptionFirstTime"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
     def your_info(self, first_name, last_name, birthday, ssn, phone, address, zip_number, info_one):
@@ -84,10 +84,10 @@ class AutoOperate(object):
         self.driver.find_element(By.ID, "XListBoxxmaritalStatus-shdo").click()
         self.driver.find_element(By.CSS_SELECTOR, ".span6:nth-child(2) #list-option1").click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        # # 社保号
+        # 社保号
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPSSN"]').send_keys(ssn)
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        # # 手机地址信息
+        # 手机地址信息
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxTpDayPhone"]').send_keys(phone)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPAddress"]').send_keys(address)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPZip"]').send_keys(zip_number)
@@ -95,7 +95,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblOtherResidentStateY"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
-        # # were
+        # were
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbmfjUSCitizenY"]').click()
         """
         //*[@id="XFormatTextBoxtbTPSSN"]
@@ -130,6 +130,10 @@ class AutoOperate(object):
 
     def start_w_2(self, zip_number, info_one, age):
         # W-2
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
+        except:
+            pass
         self.driver.find_element(By.XPATH, '//*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a').click()
         time.sleep(2)
         self.driver.find_element(By.XPATH,
@@ -214,42 +218,59 @@ class AutoOperate(object):
 
         # Enter your driver’s license or state ID.
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPinAvailable"]').click()
+
+        # Some questions about your tax and IRS history
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButton2"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonNonMFJIdentityPinNo"]').click()
+        self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxcbTPUnwilling"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         self.driver.find_element(By.ID, "XFormatTextBoxTPPin").send_keys("93737")
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        if not self.is_exist("All your hard work has paid off! It’s time to e-file."):
+        if not self.is_exist(" All your hard work has paid off! It’s "):
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        # 验证码
-        src = self.driver.find_element(By.XPATH, '//*[@id="ac-image"]').get_attribute('src')
-        code = self.get_img_code(src)
+        # 验证码  //*[@id="ac-image"]
+        count_while = 1
+        while count_while < 3:
+            ac_img = self.driver.find_element(By.XPATH, '//*[@id="ac-image"]')
+            print(ac_img.location)
+            src = ac_img.get_attribute('src')
+            code = self.get_img_code(src, ac_img)
+            if code:
+                break
+            count_while += 1
+            self.driver.find_element(By.XPATH, '//*[@id="ac-holder"]/div/button[2]').click()
+            time.sleep(2)
         self.driver.find_element(By.XPATH, '//*[@id="ac-guess"]').send_keys(code)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock1"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock14"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="XHyperlink2"]').click()
+        # TODO 记录到达最后一步
 
-    def get_img_code(self, src):
-        url = f"https://taxes.hrblock.com{src}"
-        headers = None
-        for request in self.driver.requests:
-            if request.url == url:
-                headers = request.headers
-                break
-        res = requests.get(url, headers=headers)
-        img_file = BytesIO()
-        img_file.write(res.content)
-        img = Image.open(img_file)
-        img = img.convert('L')
+    def get_img_code(self, url, img_element):
+        # 获取整个浏览器窗口的截图
+        screenshot = self.driver.get_screenshot_as_png()
+
+        # 打开截图并转换为Pillow Image对象
+        img = Image.open(BytesIO(screenshot))
+        # img.save("screenshot.png")
+        # 获取第一张图片的位置和大小
+        location = img_element.location
+        size = img_element.size
+        # print(location)
+        # # 剪切出图片部分并保存
+        img_file = img.crop((location["x"], location["y"], location["x"] + size["width"], location["y"] + size["height"]))
+        # img_file.save("image.png")
+        img_file = img_file.convert('L')
         # 增加对比度
-        contrast = ImageEnhance.Contrast(img)
-        img = contrast.enhance(1.5)
-        code = pytesseract.image_to_string(img)
+        contrast = ImageEnhance.Contrast(img_file)
+        img_file = contrast.enhance(1.5)
+        code = pytesseract.image_to_string(img_file)
         return code
 
     def handle_date(self, birthday):
@@ -290,7 +311,7 @@ class AutoOperate(object):
 
 if __name__ == '__main__':
     # qrmhayfbsyc@hotmail.com CFQCPD76J
-    operate = AutoOperate("27.0.0.1:56020")
+    operate = AutoOperate("127.0.0.1:56020")
     info_one, info_data = search_one_data()
     operate.run(info_one)
     # operate.get_img_code("/captcha/image/MmhESDZPamxCSllpYWJpc1o3Lzg1SG5ia04yYnFSVTdFWVBXeGtEWERiYzRMRWRycXYvVEVkWlRBRnZ6YnA5TnNlNW1BYmFnTEdlMElvMEFVbWQrbzdId0RNb0xBRmIzMGpoTXJSTlh2a1k9")

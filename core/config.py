@@ -19,6 +19,8 @@ class Settings(object):
     # file
     FILE_PATH = env.str("FILE_PATH", "/file/账号信息.xlsx")
 
+    # tesseract
+    TESSERACT_PATH = env.str("TESSERACT_PATH", r"D:\Program Files\Tesseract-OCR\tesseract.exe")
 
 settings = Settings()
 
