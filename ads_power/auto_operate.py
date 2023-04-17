@@ -2,10 +2,10 @@ import time
 from io import BytesIO
 import pytesseract
 import requests
-from selenium import webdriver
+from seleniumwire import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageEnhance
 
 from core.information import search_one_data
 from core.hotemail import get_mail
@@ -16,11 +16,11 @@ class AutoOperate(object):
 
     def __init__(self, address):
         options = webdriver.ChromeOptions()
-        options.add_experimental_option("debuggerAddress", address)
-        self.driver = webdriver.Chrome(options=options)
-        self.driver.set_window_size(1200, 1050)
+        # options.add_experimental_option("debuggerAddress", address)
+        # self.driver = webdriver.Chrome(options=options)
+        # self.driver.set_window_size(1200, 1050)
 
-        # self.driver = webdriver.Chrome("chromedriver")1200  1050
+        self.driver = webdriver.Chrome("chromedriver")
         self.driver.implicitly_wait(120)
 
     def home_to_create_an_account(self):
@@ -50,7 +50,7 @@ class AutoOperate(object):
         if self.is_exist("Error: Sorry, we don't recognize this security code. Please try again."):
             if depth > 5:
                 raise SystemExit
-            self.verify_code(email_name, email_pwd, depth+1)
+            self.verify_code(email_name, email_pwd, depth + 1)
 
     def register_email(self, email, username, password):
         self.driver.find_element(By.XPATH, '//*[@id="email"]/span/input').send_keys(email)
@@ -132,7 +132,8 @@ class AutoOperate(object):
         # W-2
         self.driver.find_element(By.XPATH, '//*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a').click()
         time.sleep(2)
-        self.driver.find_element(By.XPATH, '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div/div/div[3]/a').click()
+        self.driver.find_element(By.XPATH,
+                                 '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div/div/div[3]/a').click()
         """
         //*[@id="cardActionPanel"]/a
         """
@@ -164,7 +165,6 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-
 
     def send_group(self, age, work):
         self.driver.find_element(By.XPATH, '//*[@id="primaryOccupation"]').send_keys(work)
@@ -234,35 +234,23 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock14"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="XHyperlink2"]').click()
 
-
     def get_img_code(self, src):
-        cookies = self.driver.get_cookies()
         url = f"https://taxes.hrblock.com{src}"
-        # session = requests.session()
-        cookies_str = ""
-        for cookie in cookies:
-            cookies_str += f"{cookie['name']}={cookie['value']};"
-            # session.cookies.set(cookie['name'], cookie['value'])
-        cookies_str = cookies_str[0: -2]
-        # res = session.get(url)
-        headers = {
-            "cookie": cookies_str,
-            "host": "taxes.hrblock.com",
-            "user-agent": "Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
-        }
+        headers = None
+        for request in self.driver.requests:
+            if request.url == url:
+                headers = request.headers
+                break
         res = requests.get(url, headers=headers)
-        print(res)
-        print(res)
         img_file = BytesIO()
         img_file.write(res.content)
         img = Image.open(img_file)
         img = img.convert('L')
-        threshold = 200
-        img = img.point(lambda x: 0 if x < threshold else 255)
-        img = img.filter(ImageFilter.MedianFilter(size=3))
+        # 增加对比度
+        contrast = ImageEnhance.Contrast(img)
+        img = contrast.enhance(1.5)
         code = pytesseract.image_to_string(img)
         return code
-
 
     def handle_date(self, birthday):
         try:
