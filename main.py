@@ -45,6 +45,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
 
-    # print(created_ads_power())
+    print(created_ads_power())

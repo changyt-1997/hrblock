@@ -10,7 +10,7 @@ from core.error_info import ExistsNameException
 from core.information import search_one_data
 from core.hotemail import get_mail
 from core.logger_info import logger
-from core.zip_info import get_zip_info
+from core.zip_info import get_zip_info, get_ein_info
 
 
 pytesseract.pytesseract.tesseract_cmd = settings.TESSERACT_PATH
@@ -21,6 +21,7 @@ class AutoOperate(object):
     def __init__(self, address):
         options = webdriver.ChromeOptions()
         options.add_experimental_option("debuggerAddress", address)
+        # options.add_argument('--disable-popup-blocking')
         self.driver = webdriver.Chrome(options=options)
         self.driver.set_window_size(1200, 1050)
 
@@ -147,6 +148,22 @@ class AutoOperate(object):
             pass
         elif age == "common":
             # 普通人，添加银行处理
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbSingleStatusN"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblClaimableStatusN"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonhasDependents2"]').click()
+            try:
+                self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            except:
+                self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblNonDependentQustnN"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            # Let's personalize your H&R Block experience
+            full_name = self.driver.find_element(By.XPATH, '//*[@id="insText_id87"]').text
+            today_date = self.driver.find_element(By.XPATH, '//*[@id="insText_id92"]').text
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxTPFullName"]').send_keys(full_name)
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxTPCurrentDate"]').send_keys(today_date)
+            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[3]/a').click()
+
             pass
         else:
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbSingleStatusN"]').click()
@@ -193,6 +210,8 @@ class AutoOperate(object):
         //*[@id="cardActionPanel"]/a
         """
         emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(zip_number)
+        if not emp_name:
+            emp_name, emp_number, emp_address = get_ein_info(zip_number)
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').send_keys(emp_number)
         except:
@@ -416,14 +435,14 @@ class AutoOperate(object):
 
 if __name__ == '__main__':
     # qrmhayfbsyc@hotmail.com CFQCPD76J
-    operate = AutoOperate("127.0.0.1:58198")
+    operate = AutoOperate("127.0.0.1:61430")
     info_one, info_data = search_one_data()
-    # operate.run(info_one)
-    operate.your_info(info_one["名"], info_one["姓"], info_one["生日"],
-                       int(info_one["社保号"]), int(info_one["电话"]), info_one["街道"], int(info_one["邮编"]), info_one)
-    date_of_birth, age = operate.handle_date(info_one["生日"])
-    operate.start_w_2(int(info_one["邮编"]), info_one, age)
-    operate.send_group(age, info_one["工作"])
+    operate.run(info_one)
+    # operate.your_info(info_one["名"], info_one["姓"], info_one["生日"],
+    #                    int(info_one["社保号"]), int(info_one["电话"]), info_one["街道"], int(info_one["邮编"]), info_one)
+    # date_of_birth, age = operate.handle_date(info_one["生日"])
+    # operate.start_w_2(int(info_one["邮编"]), info_one, age)
+    # operate.send_group(age, info_one["工作"])
 
     #
     # pytesseract.pytesseract.tesseract_cmd = r"D:\Program Files\Tesseract-OCR\tesseract.exe"
