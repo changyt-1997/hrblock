@@ -7,6 +7,7 @@ from PIL import Image, ImageFilter, ImageEnhance
 from core.config import settings
 from core.information import search_one_data
 from core.hotemail import get_mail
+from core.logger_info import logger
 from core.zip_info import get_zip_info
 
 
@@ -54,6 +55,7 @@ class AutoOperate(object):
             self.verify_code(email_name, email_pwd, depth + 1)
 
     def register_email(self, email, username, password):
+        logger.info(f"创建H&R账户：邮箱:{email}, 用户名：{username}")
         self.driver.find_element(By.XPATH, '//*[@id="email"]/span/input').send_keys(email)
         self.driver.find_element(By.XPATH, '//*[@id="userName"]/span/input').send_keys(username)
         self.driver.find_element(By.XPATH, '//*[@id="showhideNew"]/button').click()
@@ -63,8 +65,10 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="createaccounttwo"]/hrb-checkbox[2]').click()
         self.driver.find_element(By.XPATH, '//*[@id="submitButton"]/button').click()
         self.driver.find_element(By.XPATH, '//*[@id="twoStepVerify"]/hrb-card-content/hrb-link/a').click()
+        logger.info(f"创建H&R账户完成")
 
     def start_on_your_taxes(self):
+        logger.info(f"进入用户信息填写流程")
         self.driver.find_element(By.XPATH, '//*[@id="imbHero"]/button').click()
         self.driver.find_element(By.XPATH, '//*[@id="imbPsBtnFour"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="imbPsNext"]/button').click()
@@ -77,6 +81,7 @@ class AutoOperate(object):
 
     def your_info(self, first_name, last_name, birthday, ssn, phone, address, zip_number, info_one):
         # 个人信息
+        logger.info(f"开始填写个人信息")
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxfirst_t"]').send_keys(first_name)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxlast_t"]').send_keys(last_name)
         date_of_birth, age = self.handle_date(birthday)
@@ -103,9 +108,11 @@ class AutoOperate(object):
 
         # age
         if age == "early":
+            logger.info(f"学生用户，开始处理学生特有流程")
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbSingleStatusY"]').click()
             self.juvenile()
             # 处理选择学生
+            logger.info(f"学生用户，处理完成")
         else:
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbSingleStatusN"]').click()
             # 处理不选择学生
@@ -129,6 +136,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
 
     def start_w_2(self, zip_number, info_one, age):
+        logger.info(f"开始填写w-2表单")
         # W-2
         try:
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
@@ -169,6 +177,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        logger.info(f"w-2表单填写完成")
 
     def send_group(self, age, work):
         self.driver.find_element(By.XPATH, '//*[@id="primaryOccupation"]').send_keys(work)
@@ -213,6 +222,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         if self.is_exist("The IRS let us know that someone else has already filed with the same SSN as you."):
             # 记录失败信息
+            logger.info(f"该ssn已经被使用，程序结束")
             raise SystemExit
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
@@ -233,6 +243,7 @@ class AutoOperate(object):
         if not self.is_exist(" All your hard work has paid off! It’s "):
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         # 验证码  //*[@id="ac-image"]
+        logger.info(f"开始识别验证码")
         count_while = 1
         while count_while < 3:
             ac_img = self.driver.find_element(By.XPATH, '//*[@id="ac-image"]')
@@ -240,10 +251,12 @@ class AutoOperate(object):
             src = ac_img.get_attribute('src')
             code = self.get_img_code(src, ac_img)
             if code:
+                logger.info(f"识别成功！验证码为：{code}")
                 break
             count_while += 1
             self.driver.find_element(By.XPATH, '//*[@id="ac-holder"]/div/button[2]').click()
             time.sleep(2)
+            logger.info(f"识别失败，开始重试：{count_while}")
         self.driver.find_element(By.XPATH, '//*[@id="ac-guess"]').send_keys(code)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock1"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
@@ -302,11 +315,12 @@ class AutoOperate(object):
         try:
             self.register_email(email, info_one["账号"], info_one["密码"])
         except Exception as e:
-            print("账号已存在，进入登录流程")
+            logger.info("账号已存在，进入登录流程")
             self.home_to_login(info_one["账号"], info_one["密码"], email, password)
         self.start_on_your_taxes()
         self.your_info(info_one["名"], info_one["姓"], info_one["生日"],
                        int(info_one["社保号"]), int(info_one["电话"]), info_one["街道"], int(info_one["邮编"]), info_one)
+        return True
 
 
 if __name__ == '__main__':

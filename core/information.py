@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import pandas as pd
-
+from core.logger_info import logger
 from core.config import settings
 
 
@@ -45,6 +45,7 @@ def change_value(value, value_title, index, data: pd.DataFrame):
     :return:
     """
     print(index)
+    logger.info(f"更改数据：{value_title}-->{value}")
     data.at[index, value_title] = value
     save_file(data, settings.FILE_PATH)
     return data
