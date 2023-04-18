@@ -14,11 +14,17 @@ def get_zip_info(code):
     ele = etree.HTML(res.text)
     index = 0
     href = ele.xpath('//div[@id="search-results"]//a/@href')[0]
-    result = get_info(href)
+    try:
+        result = get_info(href)
+    except:
+        result = None
     while not result:
         index += 1
         href = ele.xpath('//div[@id="search-results"]//a/@href')[index]
-        result = get_info(href)
+        try:
+            result = get_info(href)
+        except:
+            result = None
     return result
 
 

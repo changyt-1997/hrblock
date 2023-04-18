@@ -22,6 +22,8 @@ def save_file(data: pd.DataFrame, path):
 def search_one_data():
     result = read_file(settings.FILE_PATH)
     df_filtered = result[result['is_completed'].isnull()]
+    if df_filtered.empty:
+        raise SystemExit
     return df_filtered.iloc[0], result
 
 

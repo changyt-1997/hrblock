@@ -10,6 +10,7 @@ class AdsPower(object):
     request_delete_user = {"url": "/api/v1/user/delete", "method": "post"}
     request_group_list = {"url": "/api/v1/group/list", "method": "get"}
     request_browser_start = {"url": "/api/v1/browser/start", "method": "get"}
+    request_browser_stop = {"url": "/api/v1/browser/stop", "method": "get"}
 
     @staticmethod
     def get(request_data, data):
@@ -67,6 +68,14 @@ class AdsPower(object):
         }
         result = AdsPower.get(AdsPower.request_browser_start, data)
         return result["data"]["ws"]["selenium"]
+
+    @staticmethod
+    def stop_browser(user_id):
+        data = {
+            "user_id": user_id
+        }
+        result = AdsPower.get(AdsPower.request_browser_stop, data)
+        return result
 
     @staticmethod
     def delete_account(user_ids):

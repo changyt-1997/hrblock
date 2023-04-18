@@ -1,10 +1,12 @@
 import time
 from io import BytesIO
 import pytesseract
+from aip import AipOcr
 from seleniumwire import webdriver
 from selenium.webdriver.common.by import By
 from PIL import Image, ImageFilter, ImageEnhance
 from core.config import settings
+from core.error_info import ExistsNameException
 from core.information import search_one_data
 from core.hotemail import get_mail
 from core.logger_info import logger
@@ -23,14 +25,18 @@ class AutoOperate(object):
         self.driver.set_window_size(1200, 1050)
 
         # self.driver = webdriver.Chrome("chromedriver")
-        self.driver.implicitly_wait(120)
+        self.driver.implicitly_wait(180)
 
     def home_to_create_an_account(self):
+        logger.info(f"正在打开注册页面")
         self.driver.get("https://www.hrblock.com/")
-        self.driver.find_element(
-            By.XPATH,
-            '//*[@id="main-nav"]/div[3]/div[2]/div/ul/li[3]/a').click()
-        self.driver.find_element(By.XPATH, '//*[@id="mCSB_1_container"]/div/a[1]').click()
+        try:
+            self.driver.find_element(
+                By.XPATH,
+                '//*[@id="main-nav"]/div[3]/div[2]/div/ul/li[3]/a').click()
+            self.driver.find_element(By.XPATH, '//*[@id="mCSB_1_container"]/div/a[1]').click()
+        except:
+            self.driver.get("https://idp.hrblock.com/idp/profile/SAML2/Redirect/SSO?execution=e1s2")
         # self.driver.find_element(By.XPATH, '//*[@id="createID"]/a').click()
 
     def home_to_login(self, username, password, email_name, email_pwd):
@@ -56,9 +62,16 @@ class AutoOperate(object):
 
     def register_email(self, email, username, password):
         logger.info(f"创建H&R账户：邮箱:{email}, 用户名：{username}")
-        self.driver.find_element(By.XPATH, '//*[@id="email"]/span/input').send_keys(email)
-        self.driver.find_element(By.XPATH, '//*[@id="userName"]/span/input').send_keys(username)
-        self.driver.find_element(By.XPATH, '//*[@id="showhideNew"]/button').click()
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="email"]/span/input').send_keys(email)
+            self.driver.find_element(By.XPATH, '//*[@id="userName"]/span/input').send_keys(username)
+            self.driver.find_element(By.XPATH, '//*[@id="showhideNew"]/button').click()
+        except:
+            self.driver.refresh()
+            self.register_email(email, username, password)
+        time.sleep(3)
+        if self.is_exist("An account already exists with this one."):
+            raise ExistsNameException("An account already exists with this one.")
         self.driver.find_element(By.XPATH, '//*[@id="password"]/span/input').send_keys(password)
         self.driver.find_element(By.XPATH, '//*[@id="confirmPassword"]/span/input').send_keys(password)
         self.driver.find_element(By.XPATH, '//*[@id="createaccounttwo"]/hrb-checkbox[1]').click()
@@ -113,6 +126,28 @@ class AutoOperate(object):
             self.juvenile()
             # 处理选择学生
             logger.info(f"学生用户，处理完成")
+        elif age == "old":
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbSingleStatusN"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblClaimableStatusN"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonhasDependents2"]').click()
+            try:
+                self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            except:
+                self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblNonDependentQustnN"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            # Let's personalize your H&R Block experience
+            full_name = self.driver.find_element(By.XPATH, '//*[@id="insText_id87"]').text
+            today_date = self.driver.find_element(By.XPATH, '//*[@id="insText_id92"]').text
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxTPFullName"]').send_keys(full_name)
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxTPCurrentDate"]').send_keys(today_date)
+            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[3]/a').click()
+
+            # 老年人，无特殊处理
+            pass
+        elif age == "common":
+            # 普通人，添加银行处理
+            pass
         else:
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbSingleStatusN"]').click()
             # 处理不选择学生
@@ -141,8 +176,16 @@ class AutoOperate(object):
         try:
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         except:
-            pass
-        self.driver.find_element(By.XPATH, '//*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a').click()
+            self.driver.find_element(By.XPATH,
+                                     '/html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a').click()
+        # //*[@id="PageFooter1"]/div/div/div[2]/a
+        # /html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a').click()
+        except:
+            self.driver.find_element(By.XPATH,
+                                     '/html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a').click()
+            self.driver.find_element(By.XPATH, '//*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a').click()
         time.sleep(2)
         self.driver.find_element(By.XPATH,
                                  '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div/div/div[3]/a').click()
@@ -175,7 +218,11 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox6"]').send_keys(int(info_one[17]))  # 17
         time.sleep(5)
         self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        except:
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxBC_EZIP"]').clear()
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxBC_EZIP"]').send_keys(zip_number)
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         logger.info(f"w-2表单填写完成")
 
@@ -240,32 +287,41 @@ class AutoOperate(object):
         self.driver.find_element(By.ID, "XFormatTextBoxTPPin").send_keys("93737")
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        if not self.is_exist(" All your hard work has paid off! It’s "):
+        if not self.is_exist("All your hard work has paid off!"):
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         # 验证码  //*[@id="ac-image"]
         logger.info(f"开始识别验证码")
         count_while = 1
-        while count_while < 3:
+        while count_while < 5:
             ac_img = self.driver.find_element(By.XPATH, '//*[@id="ac-image"]')
             print(ac_img.location)
             src = ac_img.get_attribute('src')
-            code = self.get_img_code(src, ac_img)
+            code = self.baidu_get_img_code(ac_img)
             if code:
                 logger.info(f"识别成功！验证码为：{code}")
-                break
+                self.driver.find_element(By.XPATH, '//*[@id="ac-guess"]').send_keys(code)
+                self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock1"]/a').click()
+                logger.info(f"等待验证码识别完成...")
+                time.sleep(5)
+
+                if self.is_exist("Please try again."):
+                    pass
+                else:
+                    break
             count_while += 1
             self.driver.find_element(By.XPATH, '//*[@id="ac-holder"]/div/button[2]').click()
             time.sleep(2)
             logger.info(f"识别失败，开始重试：{count_while}")
-        self.driver.find_element(By.XPATH, '//*[@id="ac-guess"]').send_keys(code)
-        self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock1"]/a').click()
+
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock14"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="XHyperlink2"]').click()
         # TODO 记录到达最后一步
 
-    def get_img_code(self, url, img_element):
+    def baidu_get_img_code(self, img_element):
+        client = AipOcr(settings.APP_ID, settings.API_KEY, settings.SECRET_KEY)
+
         # 获取整个浏览器窗口的截图
         screenshot = self.driver.get_screenshot_as_png()
 
@@ -275,15 +331,47 @@ class AutoOperate(object):
         # 获取第一张图片的位置和大小
         location = img_element.location
         size = img_element.size
+        img_file = img.crop(
+            (location["x"], location["y"], location["x"] + size["width"], location["y"] + size["height"]))
+        # image = get_file_content('image.png')
+        # 调用通用文字识别（高精度版）
+        file = BytesIO()
+        img_file.save(file, format="png")
+        res_image = client.basicAccurate(file.getvalue())
+        return res_image["words_result"][0]["words"]
+
+    def get_img_code(self, url, img_element, option=True, num=1):
+        logger.info(f"开始识别代码：{option, num}")
+
+        # 获取整个浏览器窗口的截图
+        screenshot = self.driver.get_screenshot_as_png()
+
+        # 打开截图并转换为Pillow Image对象
+        img = Image.open(BytesIO(screenshot))
+        # img.save("screenshot.png")
+        # 获取第一张图片的位置和大小
+        location = img_element.location
+        size = img_element.size
+        print(size)
         # print(location)
         # # 剪切出图片部分并保存
-        img_file = img.crop((location["x"], location["y"], location["x"] + size["width"], location["y"] + size["height"]))
-        # img_file.save("image.png")
+        if self.is_exist("Please try again.") and option:
+            img_file = img.crop((location["x"], location["y"]+92, location["x"] + size["width"], location["y"] + size["height"]+92))
+        else:
+            img_file = img.crop((location["x"], location["y"], location["x"] + size["width"], location["y"] + size["height"]))
+        img_file.save("image.png")
         img_file = img_file.convert('L')
         # 增加对比度
         contrast = ImageEnhance.Contrast(img_file)
-        img_file = contrast.enhance(1.5)
-        code = pytesseract.image_to_string(img_file)
+        img_file = contrast.enhance(4)
+        threshold = 200
+        img_file = img_file.point(lambda x: 0 if x < threshold else 255)
+        img_file = img_file.filter(ImageFilter.MedianFilter(size=3))
+        # img_file.show()
+        code = pytesseract.image_to_string(img_file).strip()
+        logger.info(f"识别代码为：{code}, 长度为{len(code)}")
+        if len(code) > 6 and num < 6:
+            self.get_img_code(url, img_element, False, num+1)
         return code
 
     def handle_date(self, birthday):
@@ -293,7 +381,7 @@ class AutoOperate(object):
         except:
             date_of_birth = birthday
             time_info = birthday.split('/')
-            year = time_info[-1]
+            year = int(time_info[-1])
         age = ""
         if year >= 2000:
             age = "early"
@@ -304,19 +392,22 @@ class AutoOperate(object):
         return date_of_birth, age
 
     def is_exist(self, str_to_find):
+        # print(self.driver.page_source)
         if str_to_find in self.driver.page_source:
+            logger.info(f"检测：{str_to_find}  在当前页面")
             return True
+        logger.info(f"检测：{str_to_find}  不在当前页面")
         return False
 
     def run(self, info_one):
         self.home_to_create_an_account()
         info_email = info_one["邮箱----密码"]
         email, password = info_email.split("----")
-        try:
-            self.register_email(email, info_one["账号"], info_one["密码"])
-        except Exception as e:
-            logger.info("账号已存在，进入登录流程")
-            self.home_to_login(info_one["账号"], info_one["密码"], email, password)
+        # try:
+        self.register_email(email, info_one["账号"], info_one["密码"])
+        # except Exception as e:
+        #     logger.info("账号已存在，进入登录流程")
+        #     self.home_to_login(info_one["账号"], info_one["密码"], email, password)
         self.start_on_your_taxes()
         self.your_info(info_one["名"], info_one["姓"], info_one["生日"],
                        int(info_one["社保号"]), int(info_one["电话"]), info_one["街道"], int(info_one["邮编"]), info_one)
@@ -325,11 +416,25 @@ class AutoOperate(object):
 
 if __name__ == '__main__':
     # qrmhayfbsyc@hotmail.com CFQCPD76J
-    operate = AutoOperate("127.0.0.1:56020")
+    operate = AutoOperate("127.0.0.1:58198")
     info_one, info_data = search_one_data()
-    operate.run(info_one)
-    # operate.get_img_code("/captcha/image/MmhESDZPamxCSllpYWJpc1o3Lzg1SG5ia04yYnFSVTdFWVBXeGtEWERiYzRMRWRycXYvVEVkWlRBRnZ6YnA5TnNlNW1BYmFnTEdlMElvMEFVbWQrbzdId0RNb0xBRmIzMGpoTXJSTlh2a1k9")
-    # try:
-    #     operate.run(info_one)
-    # except:
-    #     operate.run(info_one)
+    # operate.run(info_one)
+    operate.your_info(info_one["名"], info_one["姓"], info_one["生日"],
+                       int(info_one["社保号"]), int(info_one["电话"]), info_one["街道"], int(info_one["邮编"]), info_one)
+    date_of_birth, age = operate.handle_date(info_one["生日"])
+    operate.start_w_2(int(info_one["邮编"]), info_one, age)
+    operate.send_group(age, info_one["工作"])
+
+    #
+    # pytesseract.pytesseract.tesseract_cmd = r"D:\Program Files\Tesseract-OCR\tesseract.exe"
+    # img_file = Image.open("image.png")
+    # img_file = img_file.convert('L')
+    # # 增加对比度
+    # contrast = ImageEnhance.Contrast(img_file)
+    # img_file = contrast.enhance(4)
+    # threshold = 200
+    # img_file = img_file.point(lambda x: 0 if x < threshold else 255)
+    # img_file = img_file.filter(ImageFilter.MedianFilter(size=3))
+    # img_file.show()
+    # code = pytesseract.image_to_string(img_file)
+    # print(code)

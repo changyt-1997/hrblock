@@ -1,0 +1,2 @@
+class ExistsNameException(Exception):
+    pass

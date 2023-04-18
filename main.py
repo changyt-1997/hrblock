@@ -1,3 +1,5 @@
+import time
+from core.error_info import ExistsNameException
 from core.information import search_one_data, change_value, search_index
 from ads_power import ads_power_instance, s5_proxy, auto_operate
 from core.config import settings
@@ -19,24 +21,30 @@ def created_ads_power():
     info_data = change_value(user_id, "user_id", search_index(info_email, info_data), info_data)
     result = ads_power_instance.AdsPower.start_run_browser(user_id)
     logger.info(f"启动指纹浏览器")
-    return result, info_data, info_one
+    logger.info(f"等待指纹浏览器连接网络.........")
+    time.sleep(10)
+    return result, info_data, info_one, user_id
 
 
 def main():
     logger.info(f"开始运行程序")
-    result, info_data, info_one = created_ads_power()
+    result, info_data, info_one, user_id = created_ads_power()
+    logger.info(f"浏览器地址信息：{result}")
     operate = auto_operate.AutoOperate(result)
-    result = operate.run(info_one)
-    change_value(result, "user_id", search_index(info_one["邮箱----密码"], info_data), info_data)
+    try:
+        result = operate.run(info_one)
+    except ExistsNameException:
+        change_value("Name Error", "is_completed", search_index(info_one["邮箱----密码"], info_data), info_data)
+        ads_power_instance.AdsPower.stop_browser(user_id)
+        ads_power_instance.AdsPower.delete_account([user_id])
+        main()
+    change_value(result, "is_completed", search_index(info_one["邮箱----密码"], info_data), info_data)
     logger.info(f"程序运行完成")
+    ads_power_instance.AdsPower.stop_browser(user_id)
+    ads_power_instance.AdsPower.delete_account([user_id])
 
 
 if __name__ == '__main__':
-    created_ads_power()
-    # result, info_data, info_one = created_ads_power()
-    # print(result)
-    # operate = AutoOperate(result)
-    # try:
-    #     operate.run(info_one)
-    # except:
-    #     operate.run(info_one)
+    main()
+
+    # print(created_ads_power())

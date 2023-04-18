@@ -22,6 +22,12 @@ class Settings(object):
     # tesseract
     TESSERACT_PATH = env.str("TESSERACT_PATH", r"D:\Program Files\Tesseract-OCR\tesseract.exe")
 
+    # baidu orc
+    APP_ID = env.str("APP_ID", None)
+    API_KEY = env.str("API_KEY", None)
+    SECRET_KEY = env.str("SECRET_KEY", None)
+
+
 settings = Settings()
 
 
