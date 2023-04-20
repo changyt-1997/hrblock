@@ -1,4 +1,5 @@
 import time
+from selenium.common.exceptions import StaleElementReferenceException
 from core.error_info import ExistsNameException
 from core.information import search_one_data, change_value, search_index
 from ads_power import ads_power_instance, s5_proxy, auto_operate
@@ -28,23 +29,28 @@ def created_ads_power():
 
 def main():
     logger.info(f"开始运行程序")
-    result, info_data, info_one, user_id = created_ads_power()
-    logger.info(f"浏览器地址信息：{result}")
-    operate = auto_operate.AutoOperate(result)
+    address, info_data, info_one, user_id = created_ads_power()
+    logger.info(f"浏览器地址信息：{address}")
+    operate = auto_operate.AutoOperate(address)
     try:
         result = operate.run(info_one)
+        change_value(result, "is_completed", search_index(info_one["邮箱----密码"], info_data), info_data)
+        logger.info(f"程序运行完成")
+        ads_power_instance.AdsPower.stop_browser(user_id)
+        ads_power_instance.AdsPower.delete_account([user_id])
     except ExistsNameException:
         change_value("Name Error", "is_completed", search_index(info_one["邮箱----密码"], info_data), info_data)
         ads_power_instance.AdsPower.stop_browser(user_id)
         ads_power_instance.AdsPower.delete_account([user_id])
         main()
-    change_value(result, "is_completed", search_index(info_one["邮箱----密码"], info_data), info_data)
-    logger.info(f"程序运行完成")
-    ads_power_instance.AdsPower.stop_browser(user_id)
-    ads_power_instance.AdsPower.delete_account([user_id])
+    except StaleElementReferenceException:
+        change_value("Network Error", "is_completed", search_index(info_one["邮箱----密码"], info_data), info_data)
+
 
 
 if __name__ == '__main__':
-    # main()
+    while True:
+        main()
 
-    print(created_ads_power())
+
+    # print(created_ads_power())

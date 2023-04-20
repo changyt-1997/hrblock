@@ -86,8 +86,12 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="imbHero"]/button').click()
         self.driver.find_element(By.XPATH, '//*[@id="imbPsBtnFour"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="imbPsNext"]/button').click()
-
-        self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # //*[@id="btnNext"]
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        except:
+            self.driver.refresh()
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock4"]/a').click()
         # To help us get you started,
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonOptionFirstTime"]').click()
@@ -107,6 +111,8 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPSSN"]').send_keys(ssn)
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         # 手机地址信息
+        if len(str(zip_number)) == 4:
+            zip_number = f"0{str(zip_number)}"
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxTpDayPhone"]').send_keys(phone)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPAddress"]').send_keys(address)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPZip"]').send_keys(zip_number)
@@ -132,9 +138,9 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblClaimableStatusN"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonhasDependents2"]').click()
             try:
-                self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-            except:
                 self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblNonDependentQustnN"]').click()
+            except:
+                self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
             # Let's personalize your H&R Block experience
@@ -152,12 +158,18 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblClaimableStatusN"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonhasDependents2"]').click()
             try:
+                self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblNonDependentQustnN"]').click()
+            except:
+                self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            try:
                 self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
             except:
+                self.driver.refresh()
                 self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblNonDependentQustnN"]').click()
-            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+                self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
             # Let's personalize your H&R Block experience
+            time.sleep(3)
             full_name = self.driver.find_element(By.XPATH, '//*[@id="insText_id87"]').text
             today_date = self.driver.find_element(By.XPATH, '//*[@id="insText_id92"]').text
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxTPFullName"]').send_keys(full_name)
@@ -169,7 +181,7 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbSingleStatusN"]').click()
             # 处理不选择学生
         self.start_w_2(zip_number, info_one, age)
-        self.send_group(age, info_one["工作"])
+        self.send_group(age, info_one["工作"], info_one)
 
     def juvenile(self):
         # pass
@@ -208,10 +220,12 @@ class AutoOperate(object):
                                  '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div/div/div[3]/a').click()
         """
         //*[@id="cardActionPanel"]/a
+        //*[@id="XFormatTextBoxTpDayPhone"]
         """
-        emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(zip_number)
+        print(zip_number)
+        emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(str(int(zip_number)))
         if not emp_name:
-            emp_name, emp_number, emp_address = get_ein_info(zip_number)
+            emp_name, emp_number, emp_address = get_ein_info(str(int(zip_number)))
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').send_keys(emp_number)
         except:
@@ -245,7 +259,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         logger.info(f"w-2表单填写完成")
 
-    def send_group(self, age, work):
+    def send_group(self, age, work, info_one):
         self.driver.find_element(By.XPATH, '//*[@id="primaryOccupation"]').send_keys(work)
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrdbVirtualCurrencyNo"]').click()
@@ -276,13 +290,38 @@ class AutoOperate(object):
         # file
         self.driver.set_window_size(1500, 1050)
         self.driver.find_element(By.XPATH, '//*[@id="menuPanel"]/ul/li[4]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock3"]/a').click()
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock3"]/a').click()
+        except:
+            self.driver.find_element(By.XPATH, '//*[@id="menuPanel"]/ul/li[4]').click()
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock3"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock109"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="TextBlockIsBasket"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonShowZeroBalance"]').click()
+        if age == "common":
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonDDOption"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
+            amount = self.driver.find_element(By.XPATH, '//*[@id="TextBlock2"]').text
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(int(info_one['transit_number']))
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox3"]').send_keys(amount)
+            # select
+            self.driver.find_element(By.ID, "XListBox1-shdo").click()
+            if info_one["account_type"] == "Savings":
+                self.driver.find_element(By.ID, "list-option2").click()
+            else:
+                self.driver.find_element(By.ID, "list-option1").click()
+            # self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxOPTBOND"]').click()
+            # self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxOPTCHECK"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(int(info_one['transit_number']))
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
+        else:
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonShowZeroBalance"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
@@ -292,7 +331,7 @@ class AutoOperate(object):
             raise SystemExit
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
-        # Enter your driver’s license or state ID.
+        # Enter your driver’s license or state ID.  //*[@id="btnNext"]  //*[@id="XRadioButtonIpPinOnlyYes"]  //*[@id="XRadioButtonIpPinOnlyNo"]   //*[@id="XCheckBoxcbTPUnwilling"]
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPinAvailable"]').click()
 
         # Some questions about your tax and IRS history
@@ -304,10 +343,16 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxcbTPUnwilling"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         self.driver.find_element(By.ID, "XFormatTextBoxTPPin").send_keys("93737")
+        # //*[@id="PageFooter1"]/div/div/div[2]/a
+        time.sleep(2)
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        time.sleep(3)
         if not self.is_exist("All your hard work has paid off!"):
-            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            try:
+                self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            except:
+                pass
         # 验证码  //*[@id="ac-image"]
         logger.info(f"开始识别验证码")
         count_while = 1
@@ -315,7 +360,10 @@ class AutoOperate(object):
             ac_img = self.driver.find_element(By.XPATH, '//*[@id="ac-image"]')
             print(ac_img.location)
             src = ac_img.get_attribute('src')
-            code = self.baidu_get_img_code(ac_img)
+            try:
+                code = self.baidu_get_img_code(ac_img)
+            except:
+                code = None
             if code:
                 logger.info(f"识别成功！验证码为：{code}")
                 self.driver.find_element(By.XPATH, '//*[@id="ac-guess"]').send_keys(code)
@@ -338,7 +386,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XHyperlink2"]').click()
         # TODO 记录到达最后一步
 
-    def baidu_get_img_code(self, img_element):
+    def baidu_get_img_code(self, img_element, option=True, num=0):
         client = AipOcr(settings.APP_ID, settings.API_KEY, settings.SECRET_KEY)
 
         # 获取整个浏览器窗口的截图
@@ -350,14 +398,23 @@ class AutoOperate(object):
         # 获取第一张图片的位置和大小
         location = img_element.location
         size = img_element.size
-        img_file = img.crop(
-            (location["x"], location["y"], location["x"] + size["width"], location["y"] + size["height"]))
+        if self.is_exist("Please try again.") and option:
+            img_file = img.crop((location["x"], location["y"]+92, location["x"] + size["width"], location["y"] + size["height"]+92))
+        else:
+            img_file = img.crop((location["x"], location["y"], location["x"] + size["width"], location["y"] + size["height"]))
         # image = get_file_content('image.png')
         # 调用通用文字识别（高精度版）
         file = BytesIO()
         img_file.save(file, format="png")
         res_image = client.basicAccurate(file.getvalue())
-        return res_image["words_result"][0]["words"]
+        if "words_result" not in res_image:
+            return None
+        result = ""
+        for i in res_image["words_result"]:
+            result += i["words"]
+        if len(result) > 6 and num < 6:
+            result = self.baidu_get_img_code(img_element, False, num+1)
+        return result
 
     def get_img_code(self, url, img_element, option=True, num=1):
         logger.info(f"开始识别代码：{option, num}")
@@ -399,8 +456,15 @@ class AutoOperate(object):
             year = birthday.year
         except:
             date_of_birth = birthday
-            time_info = birthday.split('/')
-            year = int(time_info[-1])
+            if "/" in birthday:
+                split_str = "/"
+                time_info = birthday.split(split_str)
+                year = int(time_info[-1])
+            else:
+                split_str = '-'
+                time_info = birthday.split(split_str)
+                date_of_birth = f"{time_info[1]}/{time_info[2]}/{time_info[0]}"
+                year = int(time_info[0])
         age = ""
         if year >= 2000:
             age = "early"
@@ -408,6 +472,7 @@ class AutoOperate(object):
             age = "old"
         elif 1999 >= year >= 1959:
             age = "common"
+        logger.info(f"检测到信息为：{age}")
         return date_of_birth, age
 
     def is_exist(self, str_to_find):
@@ -435,14 +500,15 @@ class AutoOperate(object):
 
 if __name__ == '__main__':
     # qrmhayfbsyc@hotmail.com CFQCPD76J
-    operate = AutoOperate("127.0.0.1:61430")
+    operate = AutoOperate("127.0.0.1:54576")
     info_one, info_data = search_one_data()
-    operate.run(info_one)
+    # operate.run(info_one)
+    # operate.start_on_your_taxes()
     # operate.your_info(info_one["名"], info_one["姓"], info_one["生日"],
     #                    int(info_one["社保号"]), int(info_one["电话"]), info_one["街道"], int(info_one["邮编"]), info_one)
-    # date_of_birth, age = operate.handle_date(info_one["生日"])
-    # operate.start_w_2(int(info_one["邮编"]), info_one, age)
-    # operate.send_group(age, info_one["工作"])
+    date_of_birth, age = operate.handle_date(info_one["生日"])
+    operate.start_w_2(int(info_one["邮编"]), info_one, age)
+    operate.send_group(age, info_one["工作"], info_one)
 
     #
     # pytesseract.pytesseract.tesseract_cmd = r"D:\Program Files\Tesseract-OCR\tesseract.exe"
@@ -457,3 +523,9 @@ if __name__ == '__main__':
     # img_file.show()
     # code = pytesseract.image_to_string(img_file)
     # print(code)
+    # with open("1.png", "rb+") as e:
+    #     result = e.read()
+    # client = AipOcr(settings.APP_ID, settings.API_KEY, settings.SECRET_KEY)
+    # res_image = client.basicAccurate(result)
+    # print(res_image)
+    # print(res_image["words_result"][0]["words"])
