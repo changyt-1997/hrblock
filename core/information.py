@@ -3,27 +3,27 @@ from pathlib import Path
 import pandas as pd
 from core.logger_info import logger
 from core.config import settings
+from core.error_info import NotDataException
 
-
-root_path = Path(__file__).resolve(strict=True).parent.parent
+# root_path = Path(__file__).resolve(strict=True).parent.parent
 
 
 def read_file(path) -> pd.DataFrame:
-    path = f"{root_path}{path}"
+    path = f"./.{path}"
     df = pd.read_excel(path)
     return df
 
 
 def save_file(data: pd.DataFrame, path):
-    path = f"{root_path}{path}"
+    path = f"./.{path}"
     data.to_excel(path)
 
 
 def search_one_data():
     result = read_file(settings.FILE_PATH)
-    df_filtered = result[result['is_completed'].isnull()]
+    df_filtered = result[result['is_completed'].isnull() & result["user_id"].isnull()]
     if df_filtered.empty:
-        raise SystemExit
+        raise NotDataException("未获取到数据")
     return df_filtered.iloc[0], result
 
 
@@ -38,7 +38,7 @@ def search_index(value, data: pd.DataFrame):
     return index
 
 
-def change_value(value, value_title, index, data: pd.DataFrame):
+def change_value(value, value_title, index):
     """
     更改值，并保存文件
     :param value:
@@ -47,6 +47,7 @@ def change_value(value, value_title, index, data: pd.DataFrame):
     :return:
     """
     print(index)
+    data = read_file(settings.FILE_PATH)
     logger.info(f"更改数据：{value_title}-->{value}")
     data.at[index, value_title] = value
     save_file(data, settings.FILE_PATH)
@@ -54,4 +55,4 @@ def change_value(value, value_title, index, data: pd.DataFrame):
 
 
 if __name__ == '__main__':
-    search_one_data()
+    print(search_one_data())

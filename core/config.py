@@ -4,9 +4,9 @@ from pathlib import Path
 
 
 env = Env()
-root_path = Path(__file__).resolve(strict=True).parent.parent
-if os.path.exists(f"{root_path}/.env"):
-    env.read_env(f"{root_path}/.env")
+# root_path = Path(__file__).resolve(strict=True).parent.parent
+if os.path.exists(f"./.env"):
+    env.read_env(f"./.env")
 
 
 class Settings(object):
@@ -26,6 +26,12 @@ class Settings(object):
     APP_ID = env.str("APP_ID", None)
     API_KEY = env.str("API_KEY", None)
     SECRET_KEY = env.str("SECRET_KEY", None)
+
+    POWER_RUN_COUNT = env.int("POWER_RUN_COUNT", 10)
+
+    HEADLESS = env.int("HEADLESS", 0)
+
+    PROXY_TYPE = env.str("PROXY_TYPE", "s5")
 
 
 settings = Settings()

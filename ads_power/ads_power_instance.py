@@ -64,7 +64,7 @@ class AdsPower(object):
     def start_run_browser(user_id):
         data = {
             "user_id": user_id,
-            # "headless": 1
+            "headless": settings.HEADLESS
         }
         result = AdsPower.get(AdsPower.request_browser_start, data)
         return result["data"]["ws"]["selenium"]
@@ -75,6 +75,7 @@ class AdsPower(object):
             "user_id": user_id
         }
         result = AdsPower.get(AdsPower.request_browser_stop, data)
+        logger.info(f"停止运行浏览器:{user_id}")
         return result
 
     @staticmethod
@@ -83,6 +84,7 @@ class AdsPower(object):
             "user_ids": user_ids
         }
         result = AdsPower.get(AdsPower.request_delete_user, data)
+        logger.info(f"删除指纹浏览器：{user_ids}")
         return result["msg"]
 
 

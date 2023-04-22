@@ -1,6 +1,7 @@
+import multiprocessing
 import time
 from selenium.common.exceptions import StaleElementReferenceException
-from core.error_info import ExistsNameException
+from core.error_info import ExistsNameException, NotDataException
 from core.information import search_one_data, change_value, search_index
 from ads_power import ads_power_instance, s5_proxy, auto_operate
 from core.config import settings
@@ -10,7 +11,10 @@ from core.logger_info import logger
 def created_ads_power():
     logger.info(f"开始创建指纹浏览器")
     group_id = ads_power_instance.AdsPower.search_group_id(settings.ADS_GROUP_NAME)
-    user_proxy_config = s5_proxy.get_proxy_guys()
+    if settings.PROXY_TYPE == "s5":
+        user_proxy_config = s5_proxy.get_proxy()
+    else:
+        user_proxy_config = s5_proxy.get_proxy_guys()
     info_one, info_data = search_one_data()
     info_email = info_one["邮箱----密码"]
     email, password = info_email.split("----")
@@ -19,7 +23,7 @@ def created_ads_power():
     # puuhxwbmts@hotmail.com----Mc7FxjqR
     # 创建浏览器
     user_id = ads_power_instance.AdsPower.create_user(email, group_id, user_proxy_config)
-    info_data = change_value(user_id, "user_id", search_index(info_email, info_data), info_data)
+    info_data = change_value(user_id, "user_id", search_index(info_email, info_data))
     result = ads_power_instance.AdsPower.start_run_browser(user_id)
     logger.info(f"启动指纹浏览器")
     logger.info(f"等待指纹浏览器连接网络.........")
@@ -27,30 +31,48 @@ def created_ads_power():
     return result, info_data, info_one, user_id
 
 
-def main():
+def main(address, info_data, info_one, user_id):
     logger.info(f"开始运行程序")
-    address, info_data, info_one, user_id = created_ads_power()
     logger.info(f"浏览器地址信息：{address}")
     operate = auto_operate.AutoOperate(address)
     try:
         result = operate.run(info_one)
-        change_value(result, "is_completed", search_index(info_one["邮箱----密码"], info_data), info_data)
+        change_value(result, "is_completed", search_index(info_one["邮箱----密码"], info_data))
         logger.info(f"程序运行完成")
         ads_power_instance.AdsPower.stop_browser(user_id)
         ads_power_instance.AdsPower.delete_account([user_id])
-    except ExistsNameException:
-        change_value("Name Error", "is_completed", search_index(info_one["邮箱----密码"], info_data), info_data)
+    except ExistsNameException as exists:
+        logger.info(f"程序运行失败：{exists}")
+        change_value("Name Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
         ads_power_instance.AdsPower.stop_browser(user_id)
         ads_power_instance.AdsPower.delete_account([user_id])
-        main()
-    except StaleElementReferenceException:
-        change_value("Network Error", "is_completed", search_index(info_one["邮箱----密码"], info_data), info_data)
-
+        # main(address, info_data, info_one, user_id)
+    except StaleElementReferenceException as stale:
+        logger.info(f"程序运行失败：{stale}")
+        change_value("Network Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
 
 
 if __name__ == '__main__':
-    while True:
-        main()
-
-
+    multiprocessing.freeze_support()
+    try:
+        while True:
+            processes = []
+            for i in range(settings.POWER_RUN_COUNT):
+                try:
+                    address, info_data, info_one, user_id = created_ads_power()
+                except NotDataException as NotData:
+                    logger.info(f"程序运行失败：{NotData}")
+                    raise SystemExit
+                p = multiprocessing.Process(target=main, args=(address, info_data, info_one, user_id,))
+                processes.append(p)
+                p.start()
+                time.sleep(3)
+            for p in processes:
+                p.join()
+                print(f"Worker {p.pid} exited with code {p.exitcode}")
+            time.sleep(3)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        input("press input enter")
     # print(created_ads_power())

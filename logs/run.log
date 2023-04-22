@@ -1,0 +1,1149 @@
+2023-04-19 21:49:33.044 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-19 21:49:33.045 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-19 21:49:33.045 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-19 21:49:37.365 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-19 21:49:37.375 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：mxfjdhj5svj@hotmail.com----8TrHdRsFdgx
+2023-04-19 21:49:38.073 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6bska1
+2023-04-19 21:50:41.183 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-19 21:50:41.184 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-19 21:50:41.184 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-19 21:50:42.803 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-19 21:50:42.814 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：mxfjdhj5svj@hotmail.com----8TrHdRsFdgx
+2023-04-19 21:50:43.214 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6bsl7r
+2023-04-19 21:50:47.145 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-19 21:50:47.145 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-19 21:50:57.154 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:57936
+2023-04-19 21:50:57.937 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-19 21:51:42.773 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:mxfjdhj5svj@hotmail.com, 用户名：MONAE54556
+2023-04-19 21:53:07.270 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-19 21:53:24.747 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-19 21:53:24.749 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-19 21:56:54.925 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-19 21:57:00.008 | INFO     | core.logger_info:info:25 - 检测到信息为：early
+2023-04-19 21:57:07.230 | INFO     | core.logger_info:info:25 - 学生用户，开始处理学生特有流程
+2023-04-19 21:57:19.481 | INFO     | core.logger_info:info:25 - 学生用户，处理完成
+2023-04-19 21:57:19.481 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-19 21:59:05.667 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-19 22:00:41.720 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-19 22:00:51.882 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  不在当前页面
+2023-04-19 22:06:05.420 | INFO     | core.logger_info:info:25 - 检测到信息为：early
+2023-04-19 22:06:08.529 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-19 22:06:08.529 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 22:06:10.318 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：327956
+2023-04-19 22:06:10.410 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-19 22:06:15.518 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-19 22:32:23.492 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-19 22:32:23.493 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-19 22:32:23.493 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-19 22:32:27.791 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-19 22:32:28.042 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：gbkjht@hotmail.com----aHXp3BE36
+2023-04-19 22:32:28.455 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6bto2k
+2023-04-19 22:32:44.962 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-19 22:32:44.962 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-19 22:32:44.962 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-19 22:32:46.509 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-19 22:32:46.753 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：gbkjht@hotmail.com----aHXp3BE36
+2023-04-19 22:32:47.133 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6btob3
+2023-04-19 22:32:51.119 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-19 22:32:51.119 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-19 22:33:01.122 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:63250
+2023-04-19 22:33:01.915 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-19 22:33:33.024 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:gbkjht@hotmail.com, 用户名：DERRAN45879
+2023-04-19 22:33:36.245 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-19 22:33:56.261 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-19 22:33:56.261 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-19 22:35:46.804 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-19 22:35:51.929 | INFO     | core.logger_info:info:25 - 检测到信息为：early
+2023-04-19 22:35:57.920 | INFO     | core.logger_info:info:25 - 学生用户，开始处理学生特有流程
+2023-04-19 22:36:07.188 | INFO     | core.logger_info:info:25 - 学生用户，处理完成
+2023-04-19 22:36:07.188 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-19 22:36:49.796 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-19 22:38:01.414 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-19 22:38:14.986 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-19 22:38:14.987 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 22:38:17.304 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：Type the text above
+2023-04-19 22:38:17.421 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-19 22:38:22.506 | INFO     | core.logger_info:info:25 - 检测：Please try again.  在当前页面
+2023-04-19 22:38:24.541 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-19 22:38:25.336 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：327321
+2023-04-19 22:38:25.419 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-19 22:38:30.512 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-19 22:38:38.330 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->True
+2023-04-19 22:38:38.355 | INFO     | core.logger_info:info:25 - 程序运行完成
+2023-04-19 22:38:41.670 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-19 22:38:41.670 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-19 22:38:41.670 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-19 22:38:47.062 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-19 22:38:47.073 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：ajbbc5gtn@hotmail.com----a6FppjnERRy
+2023-04-19 22:38:47.375 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6btsi9
+2023-04-19 22:38:49.872 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-19 22:38:49.873 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-19 22:38:59.874 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:64711
+2023-04-19 22:39:00.668 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-19 22:39:30.787 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:ajbbc5gtn@hotmail.com, 用户名：ARIANNA98176
+2023-04-19 22:39:34.001 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-19 22:39:45.760 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-19 22:39:45.761 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-19 22:41:48.875 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-19 22:48:48.882 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-19 22:48:48.882 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-19 22:48:48.882 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-19 22:48:49.623 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-19 22:48:49.873 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：ehmf4ag@hotmail.com----re3wVG6dGd
+2023-04-19 22:48:50.264 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6bu2kg
+2023-04-19 22:48:59.108 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-19 22:48:59.108 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-19 22:49:09.115 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:50493
+2023-04-19 22:49:09.926 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-19 22:49:44.220 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:ehmf4ag@hotmail.com, 用户名：ARIANNA98177
+2023-04-19 22:49:47.489 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-19 22:50:00.792 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-19 22:50:00.793 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-19 22:58:25.956 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-19 22:59:05.038 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-19 22:59:10.675 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:02:39.264 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-19 23:02:56.581 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-19 23:04:05.631 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-19 23:04:20.058 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-19 23:04:20.058 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 23:14:01.771 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:14:01.772 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 23:14:05.388 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-19 23:14:08.088 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：3
+2023-04-19 23:14:11.054 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：4
+2023-04-19 23:14:13.721 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：5
+2023-04-19 23:15:21.621 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:15:21.621 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 23:15:24.880 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-19 23:15:27.609 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：3
+2023-04-19 23:15:30.318 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：4
+2023-04-19 23:15:33.082 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：5
+2023-04-19 23:15:48.525 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:15:48.525 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 23:15:51.334 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-19 23:15:54.048 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：3
+2023-04-19 23:15:58.178 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：4
+2023-04-19 23:16:00.937 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：5
+2023-04-19 23:16:33.038 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:16:33.038 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 23:17:17.318 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:17:17.318 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 23:17:18.338 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：459291
+2023-04-19 23:17:18.466 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-19 23:17:23.554 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-19 23:20:48.201 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-19 23:20:48.201 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-19 23:20:48.201 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-19 23:20:49.600 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-19 23:20:49.848 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：nhprcnsuhe@hotmail.com----hAjQdFFQBC3
+2023-04-19 23:20:50.300 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6burkr
+2023-04-19 23:20:56.424 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-19 23:20:56.424 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-19 23:21:06.437 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:53305
+2023-04-19 23:21:07.216 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-19 23:21:42.733 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:nhprcnsuhe@hotmail.com, 用户名：DELIA9618
+2023-04-19 23:21:45.963 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-19 23:22:01.264 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-19 23:22:01.264 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-19 23:23:52.377 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-19 23:23:58.031 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:27:20.072 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-19 23:28:00.167 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-19 23:32:54.658 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:33:20.993 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-19 23:37:07.016 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:37:19.697 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-19 23:37:19.697 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 23:37:21.471 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：Captcha Image
+2023-04-19 23:37:21.642 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-19 23:37:26.723 | INFO     | core.logger_info:info:25 - 检测：Please try again.  在当前页面
+2023-04-19 23:37:28.772 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-19 23:37:31.496 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：3
+2023-04-19 23:37:33.555 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：Type the text above
+2023-04-19 23:37:33.675 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-19 23:37:38.768 | INFO     | core.logger_info:info:25 - 检测：Please try again.  在当前页面
+2023-04-19 23:37:40.817 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：4
+2023-04-19 23:37:41.445 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：Type the text above
+2023-04-19 23:37:41.551 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-19 23:37:46.642 | INFO     | core.logger_info:info:25 - 检测：Please try again.  在当前页面
+2023-04-19 23:37:48.696 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：5
+2023-04-19 23:42:42.555 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-19 23:42:42.556 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-19 23:42:42.556 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-19 23:42:43.466 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-19 23:42:43.715 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：xtukrsh@hotmail.com----xjnSUD34
+2023-04-19 23:42:44.112 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6bv95h
+2023-04-19 23:42:49.485 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-19 23:42:49.486 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-19 23:42:59.495 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:55239
+2023-04-19 23:43:00.286 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-19 23:43:32.398 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:xtukrsh@hotmail.com, 用户名：CHIOMA18917
+2023-04-19 23:43:35.622 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-19 23:44:07.311 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-19 23:44:07.311 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-19 23:47:28.308 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-19 23:47:36.987 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-19 23:50:58.322 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-19 23:51:35.748 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-19 23:53:01.977 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-19 23:53:22.427 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-19 23:53:22.427 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-19 23:53:22.615 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-19 23:53:26.185 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-19 23:53:26.362 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-19 23:53:26.924 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：247149
+2023-04-19 23:53:27.021 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-19 23:53:32.135 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 00:00:07.459 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 00:00:07.460 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 00:00:07.460 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 00:00:08.397 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 00:00:08.650 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：pnkduyb@hotmail.com----PJSsYwY8
+2023-04-20 00:00:08.993 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6bvmd8
+2023-04-20 00:00:15.166 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 00:00:15.167 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 00:00:25.177 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:57105
+2023-04-20 00:00:25.930 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 00:01:13.105 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:pnkduyb@hotmail.com, 用户名：KENYA69782
+2023-04-20 00:01:16.316 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 00:01:27.094 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 00:01:27.094 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 00:03:09.504 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 00:03:13.337 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-20 00:03:28.988 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 00:03:48.503 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 00:04:56.144 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-20 00:05:07.922 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  不在当前页面
+2023-04-20 00:08:07.969 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-20 00:08:08.188 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 00:08:09.749 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：381471
+2023-04-20 00:08:09.842 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-20 00:08:14.973 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 00:08:27.466 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->True
+2023-04-20 00:08:27.506 | INFO     | core.logger_info:info:25 - 程序运行完成
+2023-04-20 00:08:30.730 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 00:08:30.730 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 00:08:30.730 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 00:08:31.056 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 00:08:31.082 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：qhctrnxb@hotmail.com----gEQ7VHjU
+2023-04-20 00:08:31.328 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6bvub6
+2023-04-20 00:08:37.855 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 00:08:37.855 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 00:08:47.864 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:61184
+2023-04-20 00:08:48.727 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 00:09:40.783 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:qhctrnxb@hotmail.com, 用户名：KENYA69783
+2023-04-20 00:09:44.042 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 00:09:55.756 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 00:09:55.757 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 00:18:04.135 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 00:18:04.135 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 00:18:04.135 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 00:18:04.715 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 00:18:05.004 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wmdpkug@hotmail.com----SEbf9MSs
+2023-04-20 00:18:05.378 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6bw429
+2023-04-20 00:18:11.343 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 00:18:11.343 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 00:18:21.345 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:51937
+2023-04-20 00:18:22.120 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 00:19:03.903 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:wmdpkug@hotmail.com, 用户名：VICTORIA9818
+2023-04-20 00:19:07.100 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 00:19:31.039 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 00:19:31.040 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 00:28:41.187 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 00:28:41.187 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 00:28:41.187 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 00:28:41.772 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 00:28:42.081 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：fycjed@hotmail.com----6tSjgxstWN6
+2023-04-20 00:28:42.413 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6bwd7f
+2023-04-20 00:28:49.639 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 00:28:49.639 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 00:28:59.654 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:50554
+2023-04-20 00:29:00.663 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 00:29:30.012 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:fycjed@hotmail.com, 用户名：SAMSON81791
+2023-04-20 00:29:33.240 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 00:29:44.249 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 00:29:44.249 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 00:31:01.917 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 00:35:17.836 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 00:36:47.790 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 00:37:08.668 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 00:37:08.801 | INFO     | core.logger_info:info:25 - 检测到信息为：
+2023-04-20 00:41:23.351 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 00:41:23.443 | INFO     | core.logger_info:info:25 - 检测到信息为：
+2023-04-20 03:32:36.033 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 03:32:36.033 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 03:32:36.033 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 03:32:36.612 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 03:32:36.913 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：eheevmdp@hotmail.com----HJHDWCvQn7
+2023-04-20 03:32:37.274 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c1a7m
+2023-04-20 03:32:43.697 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 03:32:43.699 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 03:32:53.710 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:63879
+2023-04-20 03:32:54.596 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 03:33:46.889 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:eheevmdp@hotmail.com, 用户名：MONAE54559
+2023-04-20 03:33:50.093 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 03:34:04.778 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 03:34:04.778 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 03:36:24.370 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 03:36:28.428 | INFO     | core.logger_info:info:25 - 检测到信息为：
+2023-04-20 03:42:12.782 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 03:42:51.046 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 03:46:43.994 | INFO     | core.logger_info:info:25 - 检测到信息为：
+2023-04-20 03:46:43.996 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 03:58:29.415 | INFO     | core.logger_info:info:25 - 检测到信息为：
+2023-04-20 03:58:29.415 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 04:02:03.251 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 04:03:52.972 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 04:05:01.476 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 04:05:31.618 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 04:05:31.619 | INFO     | core.logger_info:info:25 - 检测到信息为：
+2023-04-20 04:05:31.675 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 04:07:16.299 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:07:16.299 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:07:16.299 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:07:17.093 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:07:17.341 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：c4td3wp@hotmail.com----qC7q9TKSp
+2023-04-20 04:07:17.707 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c204o
+2023-04-20 04:07:23.570 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 04:07:23.570 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 04:07:33.578 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:50518
+2023-04-20 04:07:34.331 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 04:08:07.332 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:c4td3wp@hotmail.com, 用户名：DERRAN45882
+2023-04-20 04:08:10.535 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 04:08:26.482 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 04:08:26.482 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 04:09:50.989 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 04:09:55.274 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-04-20 04:23:27.047 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:23:27.047 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:23:27.047 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:23:27.757 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:23:28.024 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：c4td3wp@hotmail.com----qC7q9TKSp
+2023-04-20 04:23:28.409 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c2aed
+2023-04-20 04:23:33.413 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 04:23:33.414 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 04:23:43.429 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:52339
+2023-04-20 04:23:44.220 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 04:24:35.658 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:c4td3wp@hotmail.com, 用户名：DERRAN45882
+2023-04-20 04:24:38.858 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  在当前页面
+2023-04-20 04:24:38.859 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->Name Error
+2023-04-20 04:24:39.746 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:24:39.746 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:24:39.747 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:24:40.051 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:24:40.064 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：xrfqwqum@hotmail.com----ms7aMGkb3n5
+2023-04-20 04:24:40.297 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c2b1n
+2023-04-20 04:24:45.271 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 04:24:45.271 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 04:24:55.281 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:52692
+2023-04-20 04:24:56.043 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 04:25:26.920 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:xrfqwqum@hotmail.com, 用户名：ARIANNA98179
+2023-04-20 04:25:30.129 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 04:25:41.701 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 04:25:41.701 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 04:27:23.127 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 04:27:28.170 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-04-20 04:29:52.107 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 04:32:58.130 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 04:34:05.043 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-20 04:34:17.124 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-20 04:34:17.124 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-20 04:34:17.315 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 04:34:21.132 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-20 04:34:21.310 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 04:34:21.912 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：117819
+2023-04-20 04:34:22.031 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-20 04:34:27.123 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 04:34:35.275 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->True
+2023-04-20 04:34:35.295 | INFO     | core.logger_info:info:25 - 程序运行完成
+2023-04-20 04:34:38.447 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->127.0.0.1:52339
+2023-04-20 04:34:38.465 | INFO     | core.logger_info:info:25 - 程序运行完成
+2023-04-20 04:34:38.468 | ERROR    | core.logger_info:error:31 - 请求失败：{'url': '/api/v1/browser/stop', 'method': 'get'}, 数据：{'user_id': 'j6c2aed'}, 返回数据：{'code': -1, 'msg': 'User_id is not open'}
+2023-04-20 04:39:13.556 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:39:13.557 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:39:13.557 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:39:14.115 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:39:14.392 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：xrfqwqum@hotmail.com----ms7aMGkb3n5
+2023-04-20 04:39:14.708 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c2l16
+2023-04-20 04:39:36.075 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:39:36.075 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:39:36.075 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:39:36.616 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:39:36.864 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：xrfqwqum@hotmail.com----ms7aMGkb3n5
+2023-04-20 04:39:37.226 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c2l8w
+2023-04-20 04:39:42.983 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 04:39:42.984 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 04:39:52.996 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:54244
+2023-04-20 04:39:54.907 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 04:40:46.692 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:xrfqwqum@hotmail.com, 用户名：ARIANNA98179
+2023-04-20 04:40:49.896 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  在当前页面
+2023-04-20 04:40:49.897 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->Name Error
+2023-04-20 04:40:50.745 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:40:50.746 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:40:50.746 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:40:51.015 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:40:51.028 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：tcgxhmsb@hotmail.com----xHWewtcgBf6
+2023-04-20 04:40:51.266 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c2m0s
+2023-04-20 04:40:56.116 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 04:40:56.116 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 04:41:06.123 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:54576
+2023-04-20 04:41:06.887 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 04:42:01.813 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:tcgxhmsb@hotmail.com, 用户名：DELIA9620
+2023-04-20 04:42:05.043 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 04:42:20.926 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 04:42:20.927 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 04:44:22.165 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 04:44:25.753 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-04-20 04:45:07.336 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 04:49:51.264 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:49:51.264 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:49:51.264 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:49:52.062 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:49:52.307 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：tcgxhmsb@hotmail.com----xHWewtcgBf6
+2023-04-20 04:49:52.678 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c2rnm
+2023-04-20 04:49:58.186 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 04:49:58.186 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 04:50:08.198 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:55497
+2023-04-20 04:50:15.748 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-04-20 04:50:15.749 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 04:52:27.455 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:52:27.455 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:52:27.456 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:52:27.728 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:52:27.972 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：tcgxhmsb@hotmail.com----xHWewtcgBf6
+2023-04-20 04:52:28.311 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c2t8h
+2023-04-20 04:52:34.240 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 04:52:34.240 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 04:52:44.245 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:55757
+2023-04-20 04:52:45.039 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 04:53:34.592 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:tcgxhmsb@hotmail.com, 用户名：DELIA9620
+2023-04-20 04:53:37.787 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  在当前页面
+2023-04-20 04:53:37.787 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->Name Error
+2023-04-20 04:53:38.635 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:53:38.636 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:53:38.636 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:53:38.887 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:53:38.900 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：qbbryna@hotmail.com----83GsaVuJPF
+2023-04-20 04:53:39.148 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c2tyx
+2023-04-20 04:53:45.206 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 04:53:45.207 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 04:53:55.220 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:56081
+2023-04-20 04:53:55.983 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 04:54:47.972 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:qbbryna@hotmail.com, 用户名：CHIOMA18919
+2023-04-20 04:54:51.195 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 04:55:06.642 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 04:55:06.642 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 04:56:47.551 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 04:56:52.968 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-04-20 04:57:06.266 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 04:57:40.032 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 04:58:48.743 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-20 04:59:07.039 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-20 04:59:07.039 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-20 04:59:07.220 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 04:59:08.525 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：459623
+2023-04-20 04:59:08.612 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-20 04:59:13.699 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 04:59:22.383 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->True
+2023-04-20 04:59:22.409 | INFO     | core.logger_info:info:25 - 程序运行完成
+2023-04-20 04:59:27.604 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 04:59:27.604 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 04:59:27.605 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 04:59:27.927 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 04:59:27.941 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wpwycevugr@hotmail.com----XBG3wvJy
+2023-04-20 04:59:28.183 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c2x4a
+2023-04-20 04:59:33.515 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 04:59:33.515 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 04:59:43.521 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:57149
+2023-04-20 04:59:44.257 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 05:00:16.251 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:wpwycevugr@hotmail.com, 用户名：KENYA69784
+2023-04-20 05:00:19.457 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 05:00:31.670 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 05:00:31.670 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 05:02:03.718 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 05:02:08.413 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-04-20 05:02:22.615 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 05:02:58.070 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 05:04:04.783 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-20 05:13:15.559 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 05:13:15.559 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 05:13:15.559 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 05:13:16.159 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 05:13:16.411 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wpwycevugr@hotmail.com----XBG3wvJy
+2023-04-20 05:13:16.775 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c361k
+2023-04-20 05:13:22.441 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 05:13:22.441 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 05:13:32.447 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:58536
+2023-04-20 05:13:33.208 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 05:14:55.902 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:wpwycevugr@hotmail.com, 用户名：KENYA69784
+2023-04-20 05:14:59.114 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  在当前页面
+2023-04-20 05:14:59.115 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->Name Error
+2023-04-20 05:14:59.984 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 05:14:59.984 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 05:14:59.984 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 05:15:00.276 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 05:15:00.289 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：nrddk4fv@hotmail.com----fduE567Ttd
+2023-04-20 05:15:00.534 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c374v
+2023-04-20 05:15:05.598 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 05:15:05.598 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 05:15:15.603 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:58864
+2023-04-20 05:15:16.334 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 05:16:08.042 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:nrddk4fv@hotmail.com, 用户名：VICTORIA9819
+2023-04-20 05:16:11.268 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 05:16:23.039 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 05:16:23.039 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 05:18:04.160 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 05:18:09.304 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-04-20 05:18:22.352 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 05:18:53.764 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 05:19:59.947 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-20 05:20:11.752 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-20 05:20:11.752 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-20 05:20:11.949 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 05:20:13.598 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：345914
+2023-04-20 05:20:13.686 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-20 05:20:18.807 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 05:20:27.341 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->True
+2023-04-20 05:20:27.418 | INFO     | core.logger_info:info:25 - 程序运行完成
+2023-04-20 05:20:32.576 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 05:20:32.576 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 05:20:32.576 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 05:20:32.893 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 05:20:32.906 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：unuyxhpqr@hotmail.com----huVxUcMVyF8
+2023-04-20 05:20:33.376 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6c39w5
+2023-04-20 05:20:38.656 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 05:20:38.657 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 05:20:48.659 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:59786
+2023-04-20 05:20:49.391 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 05:21:28.772 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:unuyxhpqr@hotmail.com, 用户名：SAMSON81792
+2023-04-20 05:21:31.980 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 05:21:43.056 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 05:21:43.057 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 05:23:14.794 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 05:23:19.544 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-04-20 23:28:02.811 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:28:02.811 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:28:03.655 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:34:17.162 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:34:17.162 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:34:17.993 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:34:18.251 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：qqqkheq@hotmail.com----6TdfaAhht
+2023-04-20 23:34:18.654 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwet8
+2023-04-20 23:34:26.669 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:34:26.669 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:34:26.891 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:34:27.152 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：qqqkheq@hotmail.com----6TdfaAhht
+2023-04-20 23:34:27.427 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwewj
+2023-04-20 23:34:34.036 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:34:34.036 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:34:44.049 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:34:44.049 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:34:44.338 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:34:44.351 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：fxxfpgwtqe@hotmail.com----ptJp3Ge5Kta
+2023-04-20 23:34:44.950 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwf5h
+2023-04-20 23:34:50.370 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:34:50.370 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:35:00.381 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:35:00.381 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:35:00.652 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:35:00.669 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：rkqejvkapjy@hotmail.com----R3MVXbQtFs
+2023-04-20 23:35:01.619 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwff8
+2023-04-20 23:35:06.860 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:35:06.860 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:35:16.870 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:35:16.870 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:35:17.138 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:35:17.154 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wkprbnrn@hotmail.com----9xrmX6t5
+2023-04-20 23:35:17.520 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwfmh
+2023-04-20 23:35:23.328 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:35:23.328 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:35:33.329 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:35:33.329 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:35:33.598 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:35:33.613 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：sqxmkkf39u@hotmail.com----Kq3CeMS6mEr
+2023-04-20 23:35:33.945 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwfs6
+2023-04-20 23:35:40.519 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:35:40.519 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:35:50.525 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:35:50.525 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:35:50.834 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:35:50.866 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：hgrhem@hotmail.com----DSrXetpGCha7
+2023-04-20 23:35:51.252 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwg0v
+2023-04-20 23:35:56.578 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:35:56.578 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:36:06.588 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:36:06.588 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:36:06.885 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:36:06.902 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：csxsakr@hotmail.com----N4WJYNChD
+2023-04-20 23:36:07.236 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwg7h
+2023-04-20 23:36:12.344 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:36:12.345 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:36:22.348 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:36:22.349 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:36:23.107 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:36:23.125 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:36:23.125 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:36:23.136 | ERROR    | core.logger_info:error:31 - 请求失败：{'url': '/api/v1/group/list', 'method': 'get'}, 数据：{'group_name': 'auto_register'}, 返回数据：{'code': -1, 'msg': 'Too many request per second, please check'}
+2023-04-20 23:38:18.378 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:38:18.378 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:38:18.694 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:38:18.949 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：qqqkheq@hotmail.com----6TdfaAhht
+2023-04-20 23:38:19.312 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwhr3
+2023-04-20 23:38:25.108 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:38:25.109 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:38:35.678 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 23:38:35.678 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:50050
+2023-04-20 23:38:38.678 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:38:38.678 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:38:38.915 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 23:38:38.970 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:38:38.984 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：fxxfpgwtqe@hotmail.com----ptJp3Ge5Kta
+2023-04-20 23:38:39.353 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwhxe
+2023-04-20 23:38:44.796 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:38:44.796 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:38:55.349 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 23:38:55.349 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:50171
+2023-04-20 23:38:56.112 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 23:38:58.354 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:38:58.354 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:38:58.626 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:38:58.640 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：rkqejvkapjy@hotmail.com----R3MVXbQtFs
+2023-04-20 23:38:59.021 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwi88
+2023-04-20 23:39:04.452 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:39:04.452 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:39:15.024 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 23:39:15.024 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:50316
+2023-04-20 23:39:15.800 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 23:39:18.026 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:39:18.026 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:39:18.591 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:39:18.629 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wkprbnrn@hotmail.com----9xrmX6t5
+2023-04-20 23:39:19.013 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwigr
+2023-04-20 23:39:24.243 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:39:24.243 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:39:34.834 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 23:39:34.834 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:50512
+2023-04-20 23:39:35.587 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 23:39:37.834 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:39:37.834 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:39:38.361 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:39:38.378 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：sqxmkkf39u@hotmail.com----Kq3CeMS6mEr
+2023-04-20 23:39:38.782 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwiun
+2023-04-20 23:39:44.020 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:39:44.020 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:39:45.439 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:fxxfpgwtqe@hotmail.com, 用户名：SAMSON81790
+2023-04-20 23:39:51.882 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:qqqkheq@hotmail.com, 用户名：VICTORIA9817
+2023-04-20 23:39:54.586 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 23:39:54.586 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:50785
+2023-04-20 23:39:55.118 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 23:39:55.356 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 23:39:57.585 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:39:57.585 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:39:57.892 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:39:57.913 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：hgrhem@hotmail.com----DSrXetpGCha7
+2023-04-20 23:39:58.247 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwj44
+2023-04-20 23:39:58.533 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:rkqejvkapjy@hotmail.com, 用户名：MONAE54558
+2023-04-20 23:40:03.763 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:40:03.764 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:40:07.551 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 23:40:14.394 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 23:40:14.394 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:51065
+2023-04-20 23:40:15.175 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 23:40:15.571 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:wkprbnrn@hotmail.com, 用户名：DERRAN45881
+2023-04-20 23:40:17.402 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:40:17.402 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:40:17.663 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:40:17.678 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：csxsakr@hotmail.com----N4WJYNChD
+2023-04-20 23:40:17.936 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 23:40:18.034 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6cwj9y
+2023-04-20 23:40:18.462 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 23:40:18.462 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 23:40:18.805 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 23:40:23.194 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-20 23:40:23.194 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-20 23:40:33.816 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-20 23:40:33.816 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:51324
+2023-04-20 23:40:34.615 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-20 23:40:36.820 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:40:36.820 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:40:37.212 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:40:38.019 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 23:40:38.019 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 23:40:39.618 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 23:40:39.618 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 23:40:39.942 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 23:40:39.942 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 23:40:56.445 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:sqxmkkf39u@hotmail.com, 用户名：ARIANNA98178
+2023-04-20 23:40:59.703 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 23:41:06.519 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:csxsakr@hotmail.com, 用户名：CHIOMA18918
+2023-04-20 23:41:09.745 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 23:41:42.259 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 23:41:42.260 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 23:41:53.067 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:hgrhem@hotmail.com, 用户名：DELIA9619
+2023-04-20 23:41:56.308 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-20 23:42:06.955 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 23:42:06.956 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 23:42:19.806 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-20 23:42:19.807 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-20 23:42:42.506 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 23:42:46.965 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-20 23:43:01.677 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 23:43:10.754 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 23:43:11.122 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 23:43:15.897 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-20 23:43:20.233 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-20 23:43:27.295 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 23:43:32.668 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-20 23:43:39.562 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 23:43:41.505 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 23:43:53.055 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 23:43:58.344 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 23:44:24.338 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 23:44:25.010 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 23:44:25.544 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 23:44:29.518 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-20 23:44:31.248 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-20 23:44:31.882 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-20 23:44:36.370 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-04-20 23:44:48.142 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 23:44:53.259 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 23:44:59.781 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-20 23:45:11.872 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 23:45:12.722 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-20 23:45:22.901 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 23:45:27.039 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-20 23:45:31.528 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-20 23:45:31.529 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-20 23:45:31.890 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 23:45:35.223 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-20 23:45:35.460 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 23:45:36.041 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：249354
+2023-04-20 23:45:36.175 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-20 23:45:37.310 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-20 23:45:41.303 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 23:45:46.394 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-20 23:45:46.394 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-20 23:45:46.607 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 23:45:49.187 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-20 23:45:49.405 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 23:45:50.027 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：513755
+2023-04-20 23:45:54.365 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->True
+2023-04-20 23:45:54.402 | INFO     | core.logger_info:info:25 - 程序运行完成
+2023-04-20 23:46:36.810 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-20 23:46:55.179 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-20 23:46:55.179 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-20 23:46:55.447 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 23:46:56.236 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：219516
+2023-04-20 23:46:56.328 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-20 23:47:01.130 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-20 23:47:01.440 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-20 23:47:12.934 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->True
+2023-04-20 23:47:12.962 | INFO     | core.logger_info:info:25 - 程序运行完成
+2023-04-20 23:50:05.056 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:50:05.056 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:50:05.615 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-20 23:50:05.630 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-20 23:50:05.630 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-20 23:50:05.633 | ERROR    | core.logger_info:error:31 - 请求失败：{'url': '/api/v1/group/list', 'method': 'get'}, 数据：{'group_name': 'auto_register'}, 返回数据：{'code': -1, 'msg': 'Too many request per second, please check'}
+2023-04-21 17:50:56.814 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-21 17:50:56.814 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-21 17:50:57.193 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-21 17:50:57.449 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：matxnx@hotmail.com----mcQJKaV5cJ
+2023-04-21 17:50:57.854 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6doett
+2023-04-21 17:51:03.962 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-21 17:51:03.962 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-21 17:51:16.984 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-21 17:51:16.985 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-21 17:51:17.263 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-21 17:51:17.278 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：umwsmshxrv@hotmail.com----gaYBYPku8
+2023-04-21 17:51:17.622 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6dof3p
+2023-04-21 17:54:15.337 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-21 17:54:15.337 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-21 17:54:15.661 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-21 17:54:15.908 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：epstunqgbq@hotmail.com----gF3txHcrw66
+2023-04-21 17:54:16.241 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6dohhu
+2023-04-22 14:33:38.942 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 14:33:38.943 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 14:33:38.945 | ERROR    | core.logger_info:error:31 - 请求失败：{'url': '/api/v1/group/list', 'method': 'get'}, 数据：{'group_name': 'auto_register'}
+2023-04-22 14:33:58.514 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 14:33:58.515 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 14:33:58.865 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-22 14:33:59.112 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：umwsmshxrv@hotmail.com----gaYBYPku8
+2023-04-22 14:33:59.476 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6eh2nx
+2023-04-22 14:34:12.247 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 14:34:12.248 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 14:34:25.271 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 14:34:25.271 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 14:34:25.561 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-22 14:34:25.574 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：epstunqgbq@hotmail.com----gF3txHcrw66
+2023-04-22 14:34:25.935 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6eh2y4
+2023-04-22 21:53:52.289 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 21:53:52.290 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 21:53:54.409 | ERROR    | core.logger_info:error:31 - 请求失败：{'url': '/api/v1/group/list', 'method': 'get'}, 数据：{'group_name': 'auto_register'}
+2023-04-22 21:54:22.359 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 21:54:22.360 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 21:54:24.409 | ERROR    | core.logger_info:error:31 - 请求失败：{'url': '/api/v1/group/list', 'method': 'get'}, 数据：{'group_name': 'auto_register'}
+2023-04-22 21:55:04.539 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 21:55:04.540 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 21:55:07.878 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 21:55:08.123 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wfvjgx@hotmail.com----69pNhbtU3
+2023-04-22 21:55:08.598 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6erk1y
+2023-04-22 21:55:12.666 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 21:55:12.667 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 21:55:23.200 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 21:55:23.201 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 21:55:24.513 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 21:55:24.752 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：yshnqt@hotmail.com----xcMKrPJ5D9
+2023-04-22 21:55:25.150 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6erk9j
+2023-04-22 21:55:27.646 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 21:55:27.647 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 21:59:50.892 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 21:59:50.893 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 21:59:50.895 | ERROR    | core.logger_info:error:31 - 请求失败：{'url': '/api/v1/group/list', 'method': 'get'}, 数据：{'group_name': 'auto_register'}
+2023-04-22 22:00:01.007 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:00:01.009 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:00:04.767 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:00:05.005 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：matxnx@hotmail.com----mcQJKaV5cJ
+2023-04-22 22:00:05.458 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6eroj9
+2023-04-22 22:00:08.294 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:00:08.295 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:00:18.803 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:00:18.804 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:00:20.530 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:00:20.761 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：umwsmshxrv@hotmail.com----gaYBYPku8
+2023-04-22 22:00:21.475 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6erosd
+2023-04-22 22:00:24.407 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:00:24.408 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:00:34.914 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:00:34.915 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:00:36.221 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:00:36.453 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：epstunqgbq@hotmail.com----gF3txHcrw66
+2023-04-22 22:00:36.859 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6erowu
+2023-04-22 22:00:40.435 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:00:40.436 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:00:50.947 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:00:50.948 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:00:52.279 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:00:52.513 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wfvjgx@hotmail.com----69pNhbtU3
+2023-04-22 22:00:52.951 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6erp44
+2023-04-22 22:00:55.350 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:00:55.351 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:01:05.856 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:01:05.856 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:01:07.116 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:01:07.348 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：yshnqt@hotmail.com----xcMKrPJ5D9
+2023-04-22 22:01:07.662 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6erpbc
+2023-04-22 22:01:10.056 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:01:10.057 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:01:20.584 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:01:20.585 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:01:22.200 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:01:22.436 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：kdtguvkexkk@hotmail.com----BYxeyTkSWkk4
+2023-04-22 22:01:22.775 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6erphd
+2023-04-22 22:01:25.517 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:01:25.518 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:01:36.055 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:01:36.056 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:01:37.379 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:01:37.612 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：qgkaqs@hotmail.com----AnJuWwtDc4
+2023-04-22 22:01:37.769 | ERROR    | core.logger_info:error:31 - 请求失败：{'url': '/api/v1/user/create', 'method': 'post'}, 数据：{'name': 'qgkaqs@hotmail.com', 'group_id': '2322080', 'user_proxy_config': {'proxy_type': 'socks5', 'proxy_host': '192.168.31.44', 'proxy_port': '30000', 'proxy_user': 'ExemplWinke@gmail.com', 'proxy_password': 'Qwe123321..', 'proxy_soft': 'other'}, 'fingerprint_config': {'browser_kernel_config': {'version': '111', 'type': 'chrome'}}}
+2023-04-22 22:07:15.591 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:07:15.591 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:07:19.081 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:07:19.369 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：matxnx@hotmail.com----mcQJKaV5cJ
+2023-04-22 22:07:19.867 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6eru55
+2023-04-22 22:07:22.896 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:07:22.897 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:07:33.413 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:07:33.414 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:07:34.717 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:07:34.948 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：umwsmshxrv@hotmail.com----gaYBYPku8
+2023-04-22 22:07:35.325 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6erubv
+2023-04-22 22:07:37.650 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:07:37.651 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:07:48.179 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:07:48.180 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:07:49.422 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:07:49.660 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：epstunqgbq@hotmail.com----gF3txHcrw66
+2023-04-22 22:07:50.253 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6erujg
+2023-04-22 22:07:52.644 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:07:52.646 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:08:03.159 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:08:03.159 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:24:01.060 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:24:01.060 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:24:01.062 | ERROR    | core.logger_info:error:31 - 请求失败：{'url': '/api/v1/group/list', 'method': 'get'}, 数据：{'group_name': 'auto_register'}
+2023-04-22 22:24:13.706 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:24:13.706 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:24:17.158 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:24:17.407 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：matxnx@hotmail.com----mcQJKaV5cJ
+2023-04-22 22:24:17.876 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6es8mk
+2023-04-22 22:24:21.614 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:24:21.615 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:24:32.658 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:24:32.659 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:24:33.898 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:24:34.142 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：umwsmshxrv@hotmail.com----gaYBYPku8
+2023-04-22 22:24:34.570 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6es8wo
+2023-04-22 22:24:37.735 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:24:37.736 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:24:48.281 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:24:48.282 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:24:49.547 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:24:49.792 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wfvjgx@hotmail.com----69pNhbtU3
+2023-04-22 22:24:50.147 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6es94g
+2023-04-22 22:24:52.790 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:24:52.791 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:25:03.399 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:03.401 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:04.622 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:04.872 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:07.887 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:07.888 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:09.066 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:09.079 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:12.086 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:12.087 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:13.270 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:13.285 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:16.294 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:16.295 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:18.569 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:18.581 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:21.597 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:21.598 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:22.899 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:22.911 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:25.924 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:25.924 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:27.108 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:27.120 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:30.132 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:30.133 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:31.308 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:31.321 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:34.326 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:34.327 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:35.511 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:35.524 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:38.531 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:38.531 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:39.722 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:39.737 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:42.741 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:42.742 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:43.872 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:43.885 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:46.892 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:46.893 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:48.068 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:48.104 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:51.116 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:51.117 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:52.295 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:52.308 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:55.316 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:55.316 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:25:56.549 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:25:56.561 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:25:59.572 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:25:59.573 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:00.750 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:00.761 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:03.772 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:03.774 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:04.945 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:04.970 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:07.975 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:07.976 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:09.148 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:09.170 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:12.182 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:12.185 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:13.357 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:13.380 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:16.393 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:16.395 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:17.896 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:17.920 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:20.925 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:20.927 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:22.438 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:22.462 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:25.467 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:25.468 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:26.693 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:26.709 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:29.710 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:29.711 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:30.952 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:30.979 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:33.987 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:33.988 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:35.154 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:35.178 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:38.186 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:38.187 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:39.371 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:39.394 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:42.395 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:42.397 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:43.584 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:43.607 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:46.623 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:46.624 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:47.802 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:47.826 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:50.840 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:50.841 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:52.020 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:52.043 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:55.055 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:55.057 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:26:56.307 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:26:56.330 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:26:59.341 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:26:59.341 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:00.537 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:00.560 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:03.574 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:03.577 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:04.755 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:04.780 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:07.788 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:07.789 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:08.927 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:08.954 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:11.965 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:11.968 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:13.182 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:13.207 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:16.211 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:16.212 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:17.744 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:17.769 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:20.773 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:20.774 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:22.586 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:22.610 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:25.611 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:25.612 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:26.827 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:26.850 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:29.854 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:29.855 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:31.091 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:31.102 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:34.111 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:34.111 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:35.289 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:35.304 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:38.313 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:38.314 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:39.842 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:39.867 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:42.884 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:42.885 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:44.100 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:44.124 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:47.139 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:47.140 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:48.636 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:48.661 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:51.665 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:51.666 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:52.857 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:52.879 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:27:55.894 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:27:55.895 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:27:57.068 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:27:57.093 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:28:00.104 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:28:00.105 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:28:01.273 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:28:01.287 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:28:04.294 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:28:04.295 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:28:05.504 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:28:05.516 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:28:08.524 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:28:08.525 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:28:09.738 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:28:09.763 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:28:12.767 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:28:12.768 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:28:13.947 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:28:13.960 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:31:50.696 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:31:50.697 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:31:54.966 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:31:55.203 | INFO     | core.logger_info:info:25 - 程序运行失败：未获取到数据
+2023-04-22 22:32:13.848 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:32:13.850 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:32:15.273 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:32:15.518 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：matxnx@hotmail.com----mcQJKaV5cJ
+2023-04-22 22:32:16.200 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6ese10
+2023-04-22 22:32:19.657 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:32:19.658 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:32:30.180 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-22 22:32:30.181 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:57383
+2023-04-22 22:32:33.307 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-22 22:33:02.881 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:matxnx@hotmail.com, 用户名：DELIA9617
+2023-04-22 22:33:06.110 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-22 22:33:32.713 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-04-22 22:33:32.714 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-04-22 22:34:38.368 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-04-22 22:34:42.289 | INFO     | core.logger_info:info:25 - 检测到信息为：early
+2023-04-22 22:34:47.944 | INFO     | core.logger_info:info:25 - 学生用户，开始处理学生特有流程
+2023-04-22 22:35:35.132 | INFO     | core.logger_info:info:25 - 学生用户，处理完成
+2023-04-22 22:35:35.134 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-04-22 22:36:10.574 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-04-22 22:37:57.585 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-04-22 22:38:09.992 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-04-22 22:38:09.994 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-04-22 22:38:10.202 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-22 22:38:13.378 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-04-22 22:38:13.592 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-22 22:38:14.224 | INFO     | core.logger_info:info:25 - 识别成功！验证码为：221393
+2023-04-22 22:38:14.338 | INFO     | core.logger_info:info:25 - 等待验证码识别完成...
+2023-04-22 22:38:19.435 | INFO     | core.logger_info:info:25 - 检测：Please try again.  不在当前页面
+2023-04-22 22:38:27.372 | INFO     | core.logger_info:info:25 - 更改数据：is_completed-->True
+2023-04-22 22:38:27.393 | INFO     | core.logger_info:info:25 - 程序运行完成
+2023-04-22 22:38:27.676 | INFO     | core.logger_info:info:25 - 停止运行浏览器:j6ese10
+2023-04-22 22:38:28.754 | INFO     | core.logger_info:info:25 - 删除指纹浏览器：['j6ese10']
+2023-04-22 22:38:33.889 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:38:33.890 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:38:36.830 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:38:36.857 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：umwsmshxrv@hotmail.com----gaYBYPku8
+2023-04-22 22:38:37.216 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6esiuh
+2023-04-22 22:43:10.178 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 22:43:10.180 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 22:43:13.821 | INFO     | core.logger_info:info:25 - 成功获取s5代理
+2023-04-22 22:43:14.078 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wfvjgx@hotmail.com----69pNhbtU3
+2023-04-22 22:43:14.452 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6esme7
+2023-04-22 22:43:18.249 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 22:43:18.250 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 22:43:29.081 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-22 22:43:29.083 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:59989
+2023-04-22 22:43:30.182 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-04-22 22:45:05.625 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:wfvjgx@hotmail.com, 用户名：VICTORIA9816
+2023-04-22 22:47:00.971 | INFO     | core.logger_info:info:25 - 检测：An account already exists with this one.  不在当前页面
+2023-04-22 23:09:51.451 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 23:09:51.453 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 23:09:52.425 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-22 23:09:52.694 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：umwsmshxrv@hotmail.com----gaYBYPku8
+2023-04-22 23:09:53.123 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6et7dl
+2023-04-22 23:09:59.894 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 23:09:59.896 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 23:10:10.492 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-22 23:10:10.493 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:63580
+2023-04-22 23:10:25.545 | INFO     | core.logger_info:info:25 - 开始创建指纹浏览器
+2023-04-22 23:10:25.546 | INFO     | core.logger_info:info:25 - 开始搜索可创建的分组：auto_register
+2023-04-22 23:10:25.893 | INFO     | core.logger_info:info:25 - 成功获取guys代理
+2023-04-22 23:10:25.910 | INFO     | core.logger_info:info:25 - 正在为指纹浏览器创建数据：wfvjgx@hotmail.com----69pNhbtU3
+2023-04-22 23:10:26.327 | INFO     | core.logger_info:info:25 - 更改数据：user_id-->j6et7q7
+2023-04-22 23:10:31.938 | INFO     | core.logger_info:info:25 - 启动指纹浏览器
+2023-04-22 23:10:31.944 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
+2023-04-22 23:10:42.554 | INFO     | core.logger_info:info:25 - 开始运行程序
+2023-04-22 23:10:42.558 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:63712
