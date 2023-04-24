@@ -2,7 +2,7 @@ import time
 from io import BytesIO
 import pytesseract
 from aip import AipOcr
-from seleniumwire import webdriver
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from PIL import Image, ImageFilter, ImageEnhance
 from core.config import settings
@@ -251,6 +251,18 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox6"]').send_keys(int(info_one[17]))  # 17
         time.sleep(5)
         self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()
+        # time.sleep(10)
+        # if self.is_exist("EIN entry is not in the normal range"):
+        #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').clear()
+        #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_ename"]').clear()
+        #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_eaddress"]').clear()
+        #     emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(str(int(zip_number)))
+        #     if not emp_name:
+        #         emp_name, emp_number, emp_address = get_ein_info(str(int(zip_number)), num=2)
+        #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').send_keys(emp_number)
+        #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_ename"]').send_keys(emp_name)
+        #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_eaddress"]').send_keys(emp_address)
+        #     self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()
         try:
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         except:
@@ -492,9 +504,16 @@ class AutoOperate(object):
         # except Exception as e:
         #     logger.info("账号已存在，进入登录流程")
         #     self.home_to_login(info_one["账号"], info_one["密码"], email, password)
+        ssn = str(int(info_one["社保号"]))
+        if len(ssn) == 7:
+            ssn = f"00{ssn}"
+        elif len(ssn) == 8:
+            ssn = f"0{ssn}"
+        else:
+            pass
         self.start_on_your_taxes()
         self.your_info(info_one["名"], info_one["姓"], info_one["生日"],
-                       int(info_one["社保号"]), int(info_one["电话"]), info_one["街道"], int(info_one["邮编"]), info_one)
+                       ssn, int(info_one["电话"]), info_one["街道"], int(info_one["邮编"]), info_one)
         return True
 
 

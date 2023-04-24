@@ -3,7 +3,7 @@ import time
 import requests
 from lxml import etree
 from selenium.webdriver.common.by import By
-from seleniumwire import webdriver
+from selenium import webdriver
 
 
 def get_zip_info(code):
@@ -40,7 +40,7 @@ def get_info(href):
     ele = etree.HTML(res.text)
     emp_name = ele.xpath('//*[@id="maincontent"]/div[2]/div[1]/p[2]/text()')[0].strip()
     emp_number = ele.xpath('//*[@id="maincontent"]/div[2]/div[2]/span[2]/div/span[2]/text()')[0]
-    if emp_number == "NONE" or emp_number is None or emp_number == '':
+    if emp_number == "NONE" or emp_number is None or emp_number == '' or str(emp_number).startswith("00"):
         return None, None, None, None
     emp_address = ele.xpath('//*[@id="maincontent"]/div[2]/div[4]/span[2]/div/text()[1]')[0].strip()
     emp_address_zip = ele.xpath('//*[@id="maincontent"]/div[2]/div[4]/span[2]/div/text()[2]')[0].split(" ")[-1]
@@ -65,9 +65,10 @@ def get_ein_info(code, num=1):
     emp_address = driver.find_element(By.XPATH, '//*[@id="masterForm"]/div[3]/div/div/main/div/div[10]/div[1]/table/tbody/tr[14]/td[2]/strong').text
     driver.close()
     driver.switch_to.window(driver.window_handles[0])
-    if emp_number == "NONE" or emp_number is None or emp_number == '':
-        return None, None, None
-    emp_number = f"{emp_number[:2]}-{emp_number[2:]}"
+    if emp_number == "NONE" or emp_number is None or emp_number == '' or str(emp_number).startswith("00"):
+        emp_name, emp_number, emp_address = get_ein_info(code, num+1)
+    if "-" not in emp_number:
+        emp_number = f"{emp_number[:2]}-{emp_number[2:]}"
     if "NOT SPECIFIED" in emp_address:
         emp_name, emp_number, emp_address = get_ein_info(code, num+1)
     return emp_name, emp_number, emp_address
@@ -75,4 +76,5 @@ def get_ein_info(code, num=1):
 
 if __name__ == '__main__':
     # print(get_zip_info(77845))01-0529099   (NOT SPECIFIED)
-    print(get_ein_info("7093"))
+    print(get_ein_info("10901"))
+    print(get_zip_info("10901"))
