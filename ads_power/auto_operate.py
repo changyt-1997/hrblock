@@ -1,3 +1,4 @@
+import random
 import time
 from io import BytesIO
 import pytesseract
@@ -67,9 +68,14 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="email"]/span/input').send_keys(email)
             self.driver.find_element(By.XPATH, '//*[@id="userName"]/span/input').send_keys(username)
             self.driver.find_element(By.XPATH, '//*[@id="showhideNew"]/button').click()
-        except:
+        except Exception as e:
+            logger.error("创建账号出错：", str(e))
+            logger.info("正在重新尝试创建账户")
             self.driver.refresh()
-            self.register_email(email, username, password)
+            self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/div[1]/hrb-input/span/input').send_keys(email)
+            self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/hrb-input/span/input').send_keys(email)
+            self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/hrb-button/button').click()
+            # self.register_email(email, username, password)
         time.sleep(3)
         if self.is_exist("An account already exists with this one."):
             raise ExistsNameException("An account already exists with this one.")
@@ -223,9 +229,11 @@ class AutoOperate(object):
         //*[@id="XFormatTextBoxTpDayPhone"]
         """
         print(zip_number)
-        emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(str(int(zip_number)))
+        index = random.randint(1, 15)
+        emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(str(int(zip_number)), index)
         if not emp_name:
-            emp_name, emp_number, emp_address = get_ein_info(str(int(zip_number)))
+            index = random.randint(1, 30)
+            emp_name, emp_number, emp_address = get_ein_info(str(int(zip_number)), index)
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').send_keys(emp_number)
         except:
@@ -337,6 +345,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        time.sleep(10)
         if self.is_exist("The IRS let us know that someone else has already filed with the same SSN as you."):
             # 记录失败信息
             logger.info(f"该ssn已经被使用，程序结束")
@@ -519,7 +528,7 @@ class AutoOperate(object):
 
 if __name__ == '__main__':
     # qrmhayfbsyc@hotmail.com CFQCPD76J
-    operate = AutoOperate("127.0.0.1:54576")
+    operate = AutoOperate("127.0.0.1:59532")
     info_one, info_data = search_one_data()
     # operate.run(info_one)
     # operate.start_on_your_taxes()
