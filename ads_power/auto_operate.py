@@ -27,7 +27,7 @@ class AutoOperate(object):
         self.driver.set_window_size(1200, 1050)
 
         # self.driver = webdriver.Chrome("chromedriver")
-        self.driver.implicitly_wait(180)
+        self.driver.implicitly_wait(120)
 
     def home_to_create_an_account(self):
         logger.info(f"正在打开注册页面")
@@ -229,11 +229,18 @@ class AutoOperate(object):
         //*[@id="XFormatTextBoxTpDayPhone"]
         """
         print(zip_number)
-        index = random.randint(1, 15)
-        emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(str(int(zip_number)), index)
+        try:
+            index = random.randint(1, 15)
+            emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(str(int(zip_number)), index)
+        except:
+            emp_name, emp_number, emp_address, emp_address_zip = None, None, None, None
         if not emp_name:
             index = random.randint(1, 30)
-            emp_name, emp_number, emp_address = get_ein_info(str(int(zip_number)), index)
+            try:
+                emp_name, emp_number, emp_address = get_ein_info(str(int(zip_number)), index)
+            except:
+                index = random.randint(1, 30)
+                emp_name, emp_number, emp_address = get_ein_info(str(int(zip_number)), index)
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').send_keys(emp_number)
         except:
@@ -304,11 +311,12 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock4"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="TextBlock10"]/a').click()
-        self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # self.driver.find_element(By.XPATH, '//*[@id="TextBlock10"]/a').click()
+        # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
         # file
         self.driver.set_window_size(1500, 1050)
+        time.sleep(20)
         self.driver.find_element(By.XPATH, '//*[@id="menuPanel"]/ul/li[4]').click()
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock3"]/a').click()

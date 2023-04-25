@@ -1,6 +1,6 @@
 import multiprocessing
 import time
-from selenium.common.exceptions import StaleElementReferenceException
+from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException, TimeoutException
 from core.error_info import ExistsNameException, NotDataException
 from core.information import search_one_data, change_value, search_index
 from ads_power import ads_power_instance, s5_proxy, auto_operate
@@ -50,6 +50,12 @@ def main(address, info_data, info_one, user_id):
     except StaleElementReferenceException as stale:
         logger.info(f"程序运行失败：{stale}")
         change_value("Network Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
+    except NoSuchElementException as no_such:
+        logger.info(f"程序运行失败：{no_such}")
+        change_value("no_such Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
+    except TimeoutException as no_such:
+        logger.info(f"程序运行失败：{no_such}")
+        change_value("Timeout Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
 
 
 if __name__ == '__main__':
