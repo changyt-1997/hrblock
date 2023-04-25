@@ -369,6 +369,11 @@ class AutoOperate(object):
             # 记录失败信息
             logger.info(f"该ssn已经被使用，程序结束")
             raise SystemExit
+        time.sleep(10)
+        if self.is_exist("If you need to change your SSNs:"):
+            # 记录失败信息
+            logger.info(f"该ssn已经被使用，程序结束")
+            raise SystemExit
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
         # Enter your driver’s license or state ID.  //*[@id="btnNext"]  //*[@id="XRadioButtonIpPinOnlyYes"]  //*[@id="XRadioButtonIpPinOnlyNo"]   //*[@id="XCheckBoxcbTPUnwilling"]
@@ -396,7 +401,7 @@ class AutoOperate(object):
         # 验证码  //*[@id="ac-image"]
         logger.info(f"开始识别验证码")
         count_while = 1
-        while count_while < 5:
+        while count_while < 10:
             ac_img = self.driver.find_element(By.XPATH, '//*[@id="ac-image"]')
             print(ac_img.location)
             src = ac_img.get_attribute('src')
