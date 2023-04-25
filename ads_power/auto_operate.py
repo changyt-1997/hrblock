@@ -113,6 +113,17 @@ class AutoOperate(object):
         self.driver.find_element(By.ID, "XListBoxxmaritalStatus-shdo").click()
         self.driver.find_element(By.CSS_SELECTOR, ".span6:nth-child(2) #list-option1").click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPSSN"]').send_keys(ssn)
+        except:
+            self.driver.refresh()
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxfirst_t"]').send_keys(first_name)
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxlast_t"]').send_keys(last_name)
+            date_of_birth, age = self.handle_date(birthday)
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxdob_t"]').send_keys(date_of_birth)
+            self.driver.find_element(By.ID, "XListBoxxmaritalStatus-shdo").click()
+            self.driver.find_element(By.CSS_SELECTOR, ".span6:nth-child(2) #list-option1").click()
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         # 社保号
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPSSN"]').send_keys(ssn)
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
