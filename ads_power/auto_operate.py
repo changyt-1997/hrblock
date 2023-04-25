@@ -239,6 +239,13 @@ class AutoOperate(object):
         //*[@id="cardActionPanel"]/a
         //*[@id="XFormatTextBoxTpDayPhone"]
         """
+        try:
+            self.w_2_table(zip_number, info_one, age)
+        except:
+            self.driver.refresh()
+            self.w_2_table(zip_number, info_one, age)
+
+    def w_2_table(self, zip_number, info_one, age):
         print(zip_number)
         try:
             index = random.randint(1, 15)

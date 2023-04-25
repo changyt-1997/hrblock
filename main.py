@@ -38,23 +38,23 @@ def main(address, info_data, info_one, user_id):
     try:
         result = operate.run(info_one)
         change_value(result, "is_completed", search_index(info_one["邮箱----密码"], info_data))
-        logger.info(f"程序运行完成")
+        logger.info(f"************程序运行完成*************")
         ads_power_instance.AdsPower.stop_browser(user_id)
         ads_power_instance.AdsPower.delete_account([user_id])
     except ExistsNameException as exists:
-        logger.info(f"程序运行失败：{exists}")
+        logger.error(f"程序运行失败：{exists}")
         change_value("Name Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
         ads_power_instance.AdsPower.stop_browser(user_id)
         ads_power_instance.AdsPower.delete_account([user_id])
         # main(address, info_data, info_one, user_id)
     except StaleElementReferenceException as stale:
-        logger.info(f"程序运行失败：{stale}")
+        logger.error(f"程序运行失败：{stale}")
         change_value("Network Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
     except NoSuchElementException as no_such:
-        logger.info(f"程序运行失败：{no_such}")
+        logger.error(f"程序运行失败：{no_such}")
         change_value("no_such Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
     except TimeoutException as no_such:
-        logger.info(f"程序运行失败：{no_such}")
+        logger.error(f"程序运行失败：{no_such}")
         change_value("Timeout Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
 
 
@@ -75,7 +75,7 @@ if __name__ == '__main__':
                 time.sleep(3)
             for p in processes:
                 p.join()
-                print(f"Worker {p.pid} exited with code {p.exitcode}")
+                print(f"**************Worker {p.pid} exited with code {p.exitcode}*****************")
             time.sleep(3)
     except Exception as e:
         import traceback
