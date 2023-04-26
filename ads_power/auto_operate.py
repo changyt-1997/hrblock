@@ -421,11 +421,14 @@ class AutoOperate(object):
                 self.driver.find_element(By.XPATH, '//*[@id="ac-guess"]').send_keys(code)
                 self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock1"]/a').click()
                 logger.info(f"等待验证码识别完成...")
-                time.sleep(5)
+                time.sleep(20)
+                # //*[@id="XFormatTextBlock1"]/a    //*[@id="ac-holder"]/div/button[2]  //*[@id="ac-guess"]
 
                 if self.is_exist("Please try again."):
                     pass
                 else:
+                    logger.info(f"验证码识别完成...")
+
                     break
             count_while += 1
             self.driver.find_element(By.XPATH, '//*[@id="ac-holder"]/div/button[2]').click()

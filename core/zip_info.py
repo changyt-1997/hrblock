@@ -75,5 +75,5 @@ def get_ein_info(code, num=1):
 
 if __name__ == '__main__':
     # print(get_zip_info(77845))01-0529099   (NOT SPECIFIED)
-    print(get_ein_info("11367"))
-    print(get_zip_info("11367"))
+    print(get_ein_info("11385"))
+    print(get_zip_info("11385"))

@@ -27,6 +27,6 @@ def get_mail(username, password, depth=0):
 
 
 if __name__ == '__main__':
-    # ge66743863@hotmail.com----SQsd5859
-    code = get_mail("ge66743863@hotmail.com", "SQsd5859")
+    # cjndnx4ean7@hotmail.com----VRv3USR8
+    code = get_mail("cjndnx4ean7@hotmail.com", "VRv3USR8")
     print(code)
