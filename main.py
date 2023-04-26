@@ -1,7 +1,7 @@
 import multiprocessing
 import time
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException, TimeoutException
-from core.error_info import ExistsNameException, NotDataException
+from core.error_info import ExistsNameException, NotDataException, SSNisUseException
 from core.information import search_one_data, change_value, search_index
 from ads_power import ads_power_instance, s5_proxy, auto_operate
 from core.config import settings
@@ -13,8 +13,12 @@ def created_ads_power():
     group_id = ads_power_instance.AdsPower.search_group_id(settings.ADS_GROUP_NAME)
     if settings.PROXY_TYPE == "s5":
         user_proxy_config = s5_proxy.get_proxy()
-    else:
+    elif settings.PROXY_TYPE == "guys":
         user_proxy_config = s5_proxy.get_proxy_guys()
+    elif settings.PROXY_TYPE == "mobilehop":
+        user_proxy_config = s5_proxy.get_proxy_mobilehop()
+    else:
+        user_proxy_config = None
     info_one, info_data = search_one_data()
     info_email = info_one["邮箱----密码"]
     email, password = info_email.split("----")
@@ -47,15 +51,33 @@ def main(address, info_data, info_one, user_id):
         ads_power_instance.AdsPower.stop_browser(user_id)
         ads_power_instance.AdsPower.delete_account([user_id])
         # main(address, info_data, info_one, user_id)
+    except SSNisUseException as ssn_use:
+        logger.error(f"程序运行失败：{ssn_use}")
+        change_value("ssn_use Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
+        ads_power_instance.AdsPower.stop_browser(user_id)
+        ads_power_instance.AdsPower.delete_account([user_id])
+        # main(address, info_data, info_one, user_id)
     except StaleElementReferenceException as stale:
         logger.error(f"程序运行失败：{stale}")
         change_value("Network Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
+        ads_power_instance.AdsPower.stop_browser(user_id)
+        ads_power_instance.AdsPower.delete_account([user_id])
     except NoSuchElementException as no_such:
         logger.error(f"程序运行失败：{no_such}")
         change_value("no_such Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
+        ads_power_instance.AdsPower.stop_browser(user_id)
+        ads_power_instance.AdsPower.delete_account([user_id])
     except TimeoutException as no_such:
         logger.error(f"程序运行失败：{no_such}")
         change_value("Timeout Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
+        ads_power_instance.AdsPower.stop_browser(user_id)
+        ads_power_instance.AdsPower.delete_account([user_id])
+    except Exception as e:
+        logger.error(f"程序运行失败：{e}")
+        change_value("Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
+        ads_power_instance.AdsPower.stop_browser(user_id)
+        ads_power_instance.AdsPower.delete_account([user_id])
+
 
 
 if __name__ == '__main__':
@@ -76,7 +98,6 @@ if __name__ == '__main__':
             for p in processes:
                 p.join()
                 print(f"**************Worker {p.pid} exited with code {p.exitcode}*****************")
-            time.sleep(3)
     except Exception as e:
         import traceback
         traceback.print_exc()

@@ -4,3 +4,8 @@ class ExistsNameException(Exception):
 
 class NotDataException(Exception):
     pass
+
+
+class SSNisUseException(Exception):
+    pass
+

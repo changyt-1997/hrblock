@@ -2,12 +2,13 @@ import random
 import time
 from io import BytesIO
 import pytesseract
+import retrying
 from aip import AipOcr
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from PIL import Image, ImageFilter, ImageEnhance
 from core.config import settings
-from core.error_info import ExistsNameException
+from core.error_info import ExistsNameException, SSNisUseException
 from core.information import search_one_data
 from core.hotemail import get_mail
 from core.logger_info import logger
@@ -27,7 +28,7 @@ class AutoOperate(object):
         self.driver.set_window_size(1200, 1050)
 
         # self.driver = webdriver.Chrome("chromedriver")
-        self.driver.implicitly_wait(120)
+        self.driver.implicitly_wait(60)
 
     def home_to_create_an_account(self):
         logger.info(f"正在打开注册页面")
@@ -75,7 +76,7 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/div[1]/hrb-input/span/input').send_keys(email)
             self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/hrb-input/span/input').send_keys(email)
             self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/hrb-button/button').click()
-            # self.register_email(email, username, password)
+            # self.register_email(email, username, password)  //*[@id="submitButton"]/button
         time.sleep(3)
         if self.is_exist("An account already exists with this one."):
             raise ExistsNameException("An account already exists with this one.")
@@ -103,6 +104,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonOptionFirstTime"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
+    @retrying.retry(stop_max_attempt_number=3)
     def your_info(self, first_name, last_name, birthday, ssn, phone, address, zip_number, info_one):
         # 个人信息
         logger.info(f"开始填写个人信息")
@@ -200,6 +202,7 @@ class AutoOperate(object):
         self.start_w_2(zip_number, info_one, age)
         self.send_group(age, info_one["工作"], info_one)
 
+    @retrying.retry(stop_max_attempt_number=3)
     def juvenile(self):
         # pass
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonTPSingleFullPartStudent2"]').click()
@@ -216,14 +219,18 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
 
+    @retrying.retry(stop_max_attempt_number=3)
     def start_w_2(self, zip_number, info_one, age):
         logger.info(f"开始填写w-2表单")
         # W-2
         try:
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         except:
-            self.driver.find_element(By.XPATH,
-                                     '/html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a').click()
+            try:
+                self.driver.find_element(By.XPATH,
+                                         '/html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a').click()
+            except:
+                pass
         # //*[@id="PageFooter1"]/div/div/div[2]/a
         # /html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a
         try:
@@ -245,6 +252,7 @@ class AutoOperate(object):
             self.driver.refresh()
             self.w_2_table(zip_number, info_one, age)
 
+    @retrying.retry(stop_max_attempt_number=3)
     def w_2_table(self, zip_number, info_one, age):
         print(zip_number)
         try:
@@ -304,6 +312,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         logger.info(f"w-2表单填写完成")
 
+    @retrying.retry(stop_max_attempt_number=3)
     def send_group(self, age, work, info_one):
         self.driver.find_element(By.XPATH, '//*[@id="primaryOccupation"]').send_keys(work)
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
@@ -375,15 +384,14 @@ class AutoOperate(object):
         if self.is_exist("The IRS let us know that someone else has already filed with the same SSN as you."):
             # 记录失败信息
             logger.info(f"该ssn已经被使用，程序结束")
-            raise SystemExit
+            raise SSNisUseException("SSN Error")
         time.sleep(10)
         if self.is_exist("If you need to change your SSNs:"):
             # 记录失败信息
             logger.info(f"该ssn已经被使用，程序结束")
-            raise SystemExit
+            raise SSNisUseException("SSN Error")
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
-        # Enter your driver’s license or state ID.  //*[@id="btnNext"]  //*[@id="XRadioButtonIpPinOnlyYes"]  //*[@id="XRadioButtonIpPinOnlyNo"]   //*[@id="XCheckBoxcbTPUnwilling"]
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPinAvailable"]').click()
 
         # Some questions about your tax and IRS history
