@@ -28,11 +28,12 @@ class AutoOperate(object):
         self.driver.set_window_size(1200, 1050)
 
         # self.driver = webdriver.Chrome("chromedriver")
-        self.driver.implicitly_wait(60)
+        self.driver.implicitly_wait(180)
 
     def home_to_create_an_account(self):
         logger.info(f"正在打开注册页面")
         self.driver.get("https://www.hrblock.com/")
+        self.accept_cookies()
         try:
             self.driver.find_element(
                 By.XPATH,
@@ -41,6 +42,14 @@ class AutoOperate(object):
         except:
             self.driver.get("https://idp.hrblock.com/idp/profile/SAML2/Redirect/SSO?execution=e1s2")
         # self.driver.find_element(By.XPATH, '//*[@id="createID"]/a').click()
+
+    def accept_cookies(self):
+        if self.is_exist("Accept Cookies"):
+            try:
+                logger.info(f"正在同意set cookie")
+                self.driver.find_element(By.XPATH, '//*[@id="onetrust-accept-btn-handler"]').click()
+            except Exception as e:
+                logger.info(f"set cookie Error")
 
     def home_to_login(self, username, password, email_name, email_pwd):
         self.driver.get("https://www.hrblock.com/")
@@ -84,7 +93,9 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="confirmPassword"]/span/input').send_keys(password)
         self.driver.find_element(By.XPATH, '//*[@id="createaccounttwo"]/hrb-checkbox[1]').click()
         self.driver.find_element(By.XPATH, '//*[@id="createaccounttwo"]/hrb-checkbox[2]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="submitButton"]/button').click()
+        element = self.driver.find_element(By.CSS_SELECTOR, "#submitButton .hrb-button__text")
+        self.driver.execute_script("arguments[0].click();", element)
+
         self.driver.find_element(By.XPATH, '//*[@id="twoStepVerify"]/hrb-card-content/hrb-link/a').click()
         logger.info(f"创建H&R账户完成")
 
@@ -104,7 +115,6 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonOptionFirstTime"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
-    @retrying.retry(stop_max_attempt_number=3)
     def your_info(self, first_name, last_name, birthday, ssn, phone, address, zip_number, info_one):
         # 个人信息
         logger.info(f"开始填写个人信息")
@@ -202,7 +212,6 @@ class AutoOperate(object):
         self.start_w_2(zip_number, info_one, age)
         self.send_group(age, info_one["工作"], info_one)
 
-    @retrying.retry(stop_max_attempt_number=3)
     def juvenile(self):
         # pass
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonTPSingleFullPartStudent2"]').click()
@@ -219,7 +228,6 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
 
-    @retrying.retry(stop_max_attempt_number=3)
     def start_w_2(self, zip_number, info_one, age):
         logger.info(f"开始填写w-2表单")
         # W-2
@@ -252,7 +260,6 @@ class AutoOperate(object):
             self.driver.refresh()
             self.w_2_table(zip_number, info_one, age)
 
-    @retrying.retry(stop_max_attempt_number=3)
     def w_2_table(self, zip_number, info_one, age):
         print(zip_number)
         try:
@@ -312,7 +319,6 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         logger.info(f"w-2表单填写完成")
 
-    @retrying.retry(stop_max_attempt_number=3)
     def send_group(self, age, work, info_one):
         self.driver.find_element(By.XPATH, '//*[@id="primaryOccupation"]').send_keys(work)
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()

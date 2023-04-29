@@ -94,10 +94,10 @@ if __name__ == '__main__':
                 p = multiprocessing.Process(target=main, args=(address, info_data, info_one, user_id,))
                 processes.append(p)
                 p.start()
-                time.sleep(3)
             for p in processes:
                 p.join()
                 print(f"**************Worker {p.pid} exited with code {p.exitcode}*****************")
+            time.sleep(3)
     except Exception as e:
         import traceback
         traceback.print_exc()
