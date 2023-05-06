@@ -262,18 +262,7 @@ class AutoOperate(object):
 
     def w_2_table(self, zip_number, info_one, age):
         print(zip_number)
-        try:
-            index = random.randint(1, 15)
-            emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(str(int(zip_number)), index)
-        except:
-            emp_name, emp_number, emp_address, emp_address_zip = None, None, None, None
-        if not emp_name:
-            index = random.randint(1, 30)
-            try:
-                emp_name, emp_number, emp_address = get_ein_info(str(int(zip_number)), index)
-            except:
-                index = random.randint(1, 30)
-                emp_name, emp_number, emp_address = get_ein_info(str(int(zip_number)), index)
+        emp_name, emp_number, emp_address = info_one["公司名称"], info_one["公司编号"], info_one["公司地址"]
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').send_keys(emp_number)
         except:
@@ -366,7 +355,7 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonDDOption"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
             amount = self.driver.find_element(By.XPATH, '//*[@id="TextBlock2"]').text
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(int(info_one['transit_number']))
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(str(info_one['transit_number']))
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox3"]').send_keys(amount)
             # select
