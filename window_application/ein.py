@@ -93,6 +93,7 @@ class Ein(object):
     def download_file(self, e):
         result = pd.concat([self.file_data, self.download_data], axis=1)
         result.to_excel("搜索结果.xlsx", index=False)
+        self.page.snack_bar.open = True
 
     def main(self):
         self.page.title = 'ein查询'
@@ -115,6 +116,10 @@ class Ein(object):
                 ft.IconButton(ft.icons.NOT_STARTED, on_click=self.start_search),
                 # ft.IconButton(ft.icons.PAUSE_CIRCLE),
             ],
+        )
+        self.page.snack_bar = ft.SnackBar(
+            content=ft.Text("已保存至当前目录下！！！"),
+            action="Alright!",
         )
         self.page.update()
 

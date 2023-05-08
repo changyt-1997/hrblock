@@ -355,7 +355,7 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonDDOption"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
             amount = self.driver.find_element(By.XPATH, '//*[@id="TextBlock2"]').text
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(str(info_one['transit_number']))
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox3"]').send_keys(amount)
             # select
@@ -368,7 +368,7 @@ class AutoOperate(object):
             # self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxOPTCHECK"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(int(info_one['transit_number']))
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
         else:
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonShowZeroBalance"]').click()
@@ -540,6 +540,13 @@ class AutoOperate(object):
             return True
         logger.info(f"检测：{str_to_find}  不在当前页面")
         return False
+
+    def handle_bank_number(self, code):
+        code = str(code)
+        num = 9 - len(code)
+        for i in range(num):
+            code = f"0{code}"
+        return code
 
     def run(self, info_one):
         self.home_to_create_an_account()
