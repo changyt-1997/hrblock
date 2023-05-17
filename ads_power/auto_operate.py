@@ -78,10 +78,10 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="email"]/span/input').send_keys(email)
             self.driver.find_element(By.XPATH, '//*[@id="userName"]/span/input').send_keys(username)
             self.driver.find_element(By.XPATH, '//*[@id="showhideNew"]/button').click()
-        except Exception as e:
-            logger.error("创建账号出错：", str(e))
+        except:
             logger.info("正在重新尝试创建账户")
             self.driver.refresh()
+            self.driver.get("https://idp.hrblock.com/idp/profile/SAML2/Redirect/SSO?execution=e1s2")
             self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/div[1]/hrb-input/span/input').send_keys(email)
             self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/hrb-input/span/input').send_keys(email)
             self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/hrb-button/button').click()
@@ -232,15 +232,14 @@ class AutoOperate(object):
         logger.info(f"开始填写w-2表单")
         # W-2
         try:
-            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
+            self.driver.find_element(By.XPATH, '//a[@class="nextButton"]').click()
         except:
             try:
                 self.driver.find_element(By.XPATH,
-                                         '/html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a').click()
+                                         '/html/body/div[14]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a').click()
             except:
-                pass
-        # //*[@id="PageFooter1"]/div/div/div[2]/a
-        # /html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a
+                self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
+
         try:
             self.driver.find_element(By.XPATH, '//*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a').click()
         except:
@@ -287,7 +286,10 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox5"]').send_keys(int(info_one[16]))  # 16
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox6"]').send_keys(int(info_one[17]))  # 17
         time.sleep(5)
-        self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()
+        except:
+            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         # time.sleep(10)
         # if self.is_exist("EIN entry is not in the normal range"):
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').clear()
@@ -299,41 +301,73 @@ class AutoOperate(object):
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').send_keys(emp_number)
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_ename"]').send_keys(emp_name)
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_eaddress"]').send_keys(emp_address)
-        #     self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()
+        #     self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()  //*[@id="btnNext"]
         try:
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         except:
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxBC_EZIP"]').clear()
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxBC_EZIP"]').send_keys(zip_number)
-        self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxBC_EZIP"]').send_keys(zip_number)
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()  # //*[@id="btnNext"]
+        except:
+            self.driver.find_element(By.XPATH, '/html/body/div[13]/div/div[4]/div[1]/div[4]/div[2]/div[1]/a').click()
         logger.info(f"w-2表单填写完成")
 
     def send_group(self, age, work, info_one):
         self.driver.find_element(By.XPATH, '//*[@id="primaryOccupation"]').send_keys(work)
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        #  Did you receive, sell, exchange, or dispose of any cryptocurrency?
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrdbVirtualCurrencyNo"]').click()
+        # Do you have any foreign accounts or assets?
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrdbDynamic1"]').click()
+        # Did you earn money in any states besides Michigan in 2022?
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbEarnedMoneyN"]').click()
+        # Here's your income.
         self.driver.find_element(By.XPATH, '//*[@id="ShowHidePanelFooter"]/div[2]/div/div/a').click()
+        # Here’s all your income we know about.
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="ShowHidePanelFooter"]/div[2]/div/div/a').click()
+        # //*[@id="ShowHidePanelFooter"]/div[2]/div/div/a/span[1]  Here are your adjustments a
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="ShowHidePanelFooter"]/div[2]/div/div/a').click()
+        except:
+            self.driver.find_element(By.XPATH, '//*[@id="ShowHidePanelFooter"]/div[2]/div/div/a/span[1]').click()
+        # Delanna, the standard deduction is the best choice for you!
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # Here are all your adjustments and deductions we know about.
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # Here are your credits.
         self.driver.find_element(By.XPATH, '//*[@id="ShowHidePanelshpPreCalcs_Footer"]/div/div/div[2]/a').click()
+        # Your return doesn’t currently include any credit
         self.driver.find_element(By.XPATH, '//*[@id="ShowHidePanelFooter"]/div[2]/div/div/a').click()
+        # Let's start on your taxes, payments, and penalties.
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="ShowHidePanelshpPreCalcs_Footer"]/div/div/div[2]/a').click()
+        # Did everyone in your household have health insurance in 2022?   //*[@id="XRadioButtoncoverageComplete0"]
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="ShowHidePanelshpPreCalcs_Footer"]/div/div/div[2]/a').click()
+        except:
+            pass
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtoncoverageComplete0"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # Thanks, that’s all we needed to know
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # Here are your additional taxes, payments, and penalties.
         self.driver.find_element(By.XPATH, '//*[@id="ShowHidePanelFooter"]/div[2]/div/div/a').click()
+        # Here are all your taxes, payments, and penalties we know about.
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # Let's wrap up your Federal taxes.
+        # Here are some things we'll ask about:
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # Let us know if any of these apply to you.
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # Let's start checking what you've entered.
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        # Federal Accuracy ReviewTM
+        # Report
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock4"]/a').click()
+        # Here's a quick look.
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        # self.driver.find_element(By.XPATH, '//*[@id="TextBlock10"]/a').click()
+        # //*[@id="TextBlock10"]/a
+        # self.driver.find_element(By.XPATH, '//*[@id="TextBlock10"]/a').click()   //*[@id="ShowHidePanelFooter"]/div[2]/div/div/a    //*[@id="btnNext"]
         # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
         # file
@@ -352,27 +386,32 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         if age == "common":
-            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonDDOption"]').click()
+            # How do you want to receive your federal refund?
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPaperCheckOption"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
-            amount = self.driver.find_element(By.XPATH, '//*[@id="TextBlock2"]').text
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox3"]').send_keys(amount)
-            # select
-            self.driver.find_element(By.ID, "XListBox1-shdo").click()
-            if info_one["account_type"] == "Savings":
-                self.driver.find_element(By.ID, "list-option2").click()
-            else:
-                self.driver.find_element(By.ID, "list-option1").click()
-            # self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxOPTBOND"]').click()
-            # self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxOPTCHECK"]').click()
-            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
-            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
+            # self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonDDOption"]').click()
+            # self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
+            # amount = self.driver.find_element(By.XPATH, '//*[@id="TextBlock2"]').text
+            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
+            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
+            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox3"]').send_keys(amount)
+            # # select
+            # self.driver.find_element(By.ID, "XListBox1-shdo").click()
+            # if info_one["account_type"] == "Savings":
+            #     self.driver.find_element(By.ID, "list-option2").click()
+            # else:
+            #     self.driver.find_element(By.ID, "list-option1").click()
+            # # self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxOPTBOND"]').click()
+            # # self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxOPTCHECK"]').click()
+            # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            #
+            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
+            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
         else:
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonShowZeroBalance"]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         time.sleep(10)
@@ -386,17 +425,27 @@ class AutoOperate(object):
             logger.info(f"该ssn已经被使用，程序结束")
             raise SSNisUseException("SSN Error")
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPinAvailable"]').click()
 
-        self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPinAvailable"]').click()
+            # self.driver.find_element(By.XPATH, '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div/div[2]/div/div/div/input').click()
+        except:
+            try:
+                self.driver.find_element(By.XPATH, '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div/div[2]/div/div').click()
+            except:
+                self.driver.refresh()
+                self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPinAvailable"]').click()
 
-        # Some questions about your tax and IRS history
+        # Some questions about your tax and IRS history  //*[@id="XRadioButtonPinAvailable"]
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButton2"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonNonMFJIdentityPinNo"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-
+        #  Good news! Verifying just got easier
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
+        # Enter your driver’s license or state ID.
         self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxcbTPUnwilling"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
+
         self.driver.find_element(By.ID, "XFormatTextBoxTPPin").send_keys("93737")
         # //*[@id="PageFooter1"]/div/div/div[2]/a
         time.sleep(2)
