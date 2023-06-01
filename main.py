@@ -97,7 +97,7 @@ if __name__ == '__main__':
             for p in processes:
                 p.join()
                 print(f"**************Worker {p.pid} exited with code {p.exitcode}*****************")
-            time.sleep(3)
+            time.sleep(1)
     except Exception as e:
         import traceback
         traceback.print_exc()

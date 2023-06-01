@@ -381,14 +381,15 @@ class AutoOperate(object):
             time.sleep(2)
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock3"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock109"]/a').click()
-        self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[2]/div[2]/a').click()
+        # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="TextBlockIsBasket"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         if age == "common":
             # How do you want to receive your federal refund?
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPaperCheckOption"]').click()
-            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[2]/div[2]/a').click()
+            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
 
             # self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonDDOption"]').click()
             # self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
@@ -407,10 +408,15 @@ class AutoOperate(object):
             # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
             #
             # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
-            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
+            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))   //*[@id="XRadioButtonPinAvailable"]
+            # //*[@id="btnNext"]   //*[@id="btnNext"]   //*[@id="btnNext"]  //*[@id="XRadioButtonPinAvailable"]
         else:
-            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonShowZeroBalance"]').click()
-            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            pass
+            # try:
+            #     self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            # except:
+            #     self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonShowZeroBalance"]').click()
+            # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
