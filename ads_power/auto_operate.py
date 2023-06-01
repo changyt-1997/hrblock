@@ -247,12 +247,11 @@ class AutoOperate(object):
                                      '/html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a').click()
             self.driver.find_element(By.XPATH, '//*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a').click()
         time.sleep(2)
-        self.driver.find_element(By.XPATH,
-                                 '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div/div/div[3]/a').click()
-        """
-        //*[@id="cardActionPanel"]/a
-        //*[@id="XFormatTextBoxTpDayPhone"]
-        """
+        try:
+            self.driver.find_element(By.XPATH,
+                                     '/html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div/div/div[3]/a').click()
+        except:
+            self.driver.find_element(By.XPATH, '//*[@id="cardActionPanel"]/a').click()
         try:
             self.w_2_table(zip_number, info_one, age)
         except:
@@ -261,6 +260,7 @@ class AutoOperate(object):
 
     def w_2_table(self, zip_number, info_one, age):
         print(zip_number)
+        # //*[@id="cardActionPanel"]/a
         emp_name, emp_number, emp_address = info_one["公司名称"], info_one["公司编号"], info_one["公司地址"]
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').send_keys(emp_number)
@@ -388,7 +388,7 @@ class AutoOperate(object):
         if age == "common":
             # How do you want to receive your federal refund?
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPaperCheckOption"]').click()
-            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
+            self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[2]/div[2]/a').click()
 
             # self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonDDOption"]').click()
             # self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
