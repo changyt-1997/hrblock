@@ -32,6 +32,7 @@ class Settings(object):
     HEADLESS = env.int("HEADLESS", 0)
 
     PROXY_TYPE = env.str("PROXY_TYPE", "s5")
+    PROXY = env.str("PROXY", "http")
 
     MOBILEHOP_HOST = env.str("MOBILEHOP_HOST")
     MOBILEHOP_PORT = env.str("MOBILEHOP_PORT")
