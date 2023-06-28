@@ -581,7 +581,7 @@ class AutoOperate(object):
         age = ""
         if year >= 2000:
             age = "early"
-        elif 1958 >= year >= 1940:
+        elif 1958 >= year:
             age = "old"
         elif 1999 >= year >= 1959:
             age = "common"

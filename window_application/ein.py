@@ -52,19 +52,21 @@ class Ein(object):
             pb.value = i / len(self.data)
             pb.label = f"{i} / {len(self.data)}"
             self.page.update()
+            if len(str(v)) == 4:
+                v = f"0{str(v)}"
             try:
                 try:
                     index = random.randint(1, 15)
-                    emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(str(int(v)), index)
+                    emp_name, emp_number, emp_address, emp_address_zip = get_zip_info(v, index)
                 except:
                     emp_name, emp_number, emp_address, emp_address_zip = None, None, None, None
                 if not emp_name:
                     index = random.randint(1, 30)
                     try:
-                        emp_name, emp_number, emp_address = get_ein_info(str(int(v)), index)
+                        emp_name, emp_number, emp_address = get_ein_info(v, index)
                     except:
                         index = random.randint(1, 30)
-                        emp_name, emp_number, emp_address = get_ein_info(str(int(v)), index)
+                        emp_name, emp_number, emp_address = get_ein_info(v, index)
                 data_result.append({"邮编": v, "公司名称": emp_name, "公司编号": emp_number, "公司地址": emp_address})
             except Exception as e:
                 data_result.append({"邮编": v, "公司名称": None, "公司编号": None, "公司地址": None})
