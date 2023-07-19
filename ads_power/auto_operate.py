@@ -37,11 +37,19 @@ class AutoOperate(object):
         try:
             self.driver.find_element(
                 By.XPATH,
-                '//*[@id="main-nav"]/div[3]/div[2]/div/ul/li[3]/a').click()
-            self.driver.find_element(By.XPATH, '//*[@id="mCSB_1_container"]/div/a[1]').click()
+                '//*[@id="clambtn"]').click()
         except:
-            self.driver.get("https://idp.hrblock.com/idp/profile/SAML2/Redirect/SSO?execution=e1s2")
-        # self.driver.find_element(By.XPATH, '//*[@id="createID"]/a').click()
+            self.driver.get("https://www.hrblock.com/")
+            self.driver.find_element(
+                By.XPATH,
+                '//*[@id="clambtn"]').click()
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="ciamElmnt"]/app-user-lookup/app-app-layout/main/hrb-layout/hrb-card-content/hrb-button/button').click()
+        except:
+            target_element = self.driver.find_element('css selector', 'button[data-automation-action="HrbButton_12"]')
+            # Perform the click using JavaScript
+            self.driver.execute_script("arguments[0].click();", target_element)
+        # self.driver.find_element(By.XPATH,    //*[@id="ciamElmnt"]/app-user-lookup/app-app-layout/main/hrb-layout/hrb-card-content/hrb-button/button
 
     def accept_cookies(self):
         if self.is_exist("Accept Cookies"):
@@ -64,39 +72,32 @@ class AutoOperate(object):
     def verify_code(self, email_name, email_pwd, depth=0):
         code = get_mail(email_name, email_pwd)
         if not code:
+            logger.info(f"获取验证码超时！！！{email_name}")
             raise SystemExit
-        self.driver.find_element(By.XPATH, '//*[@id="siEmailSCode"]/span/input').clear()
+        self.driver.find_element(By.XPATH, '//*[@id="oobField"]/span/input').clear(code)
         self.driver.find_element(By.XPATH, '//*[@id="siEmailSCode"]/span/input').send_keys(code)
-        if self.is_exist("Error: Sorry, we don't recognize this security code. Please try again."):
+        if self.is_exist("Please review the following information. "):
             if depth > 5:
                 raise SystemExit
             self.verify_code(email_name, email_pwd, depth + 1)
 
-    def register_email(self, email, username, password):
+    def register_email(self, email, email_pwd, username, password, first_name, last_name):
         logger.info(f"创建H&R账户：邮箱:{email}, 用户名：{username}")
-        try:
-            self.driver.find_element(By.XPATH, '//*[@id="email"]/span/input').send_keys(email)
-            self.driver.find_element(By.XPATH, '//*[@id="userName"]/span/input').send_keys(username)
-            self.driver.find_element(By.XPATH, '//*[@id="showhideNew"]/button').click()
-        except:
-            logger.info("正在重新尝试创建账户")
-            self.driver.refresh()
-            self.driver.get("https://idp.hrblock.com/idp/profile/SAML2/Redirect/SSO?execution=e1s2")
-            self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/div[1]/hrb-input/span/input').send_keys(email)
-            self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/hrb-input/span/input').send_keys(email)
-            self.driver.find_element(By.XPATH, '/html/body/main/hrb-layout/hrb-card-content/form/div[1]/hrb-button/button').click()
-            # self.register_email(email, username, password)  //*[@id="submitButton"]/button
-        time.sleep(3)
-        if self.is_exist("An account already exists with this one."):
-            raise ExistsNameException("An account already exists with this one.")
+        self.driver.find_element(By.XPATH, '//*[@name="email"]/span/input').send_keys(email)
         self.driver.find_element(By.XPATH, '//*[@id="password"]/span/input').send_keys(password)
         self.driver.find_element(By.XPATH, '//*[@id="confirmPassword"]/span/input').send_keys(password)
-        self.driver.find_element(By.XPATH, '//*[@id="createaccounttwo"]/hrb-checkbox[1]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="createaccounttwo"]/hrb-checkbox[2]').click()
-        element = self.driver.find_element(By.CSS_SELECTOR, "#submitButton .hrb-button__text")
-        self.driver.execute_script("arguments[0].click();", element)
-
-        self.driver.find_element(By.XPATH, '//*[@id="twoStepVerify"]/hrb-card-content/hrb-link/a').click()
+        target_element = self.driver.find_element('css selector', 'span.hrb-checkbox__checkmark.hrb-checkbox--light-green')
+        # Perform the click using JavaScript
+        self.driver.execute_script("arguments[0].click();", target_element)
+        # self.driver.find_element(By.XPATH, '//*[@name="agreePolicy"]/label/span/span').click()
+        self.driver.find_element(By.XPATH, '//*[@id="btn_createaccount"]/button/span/span/hrb-text').click()
+        time.sleep(3)
+        self.verify_code(email, email_pwd)
+        self.driver.find_element(By.XPATH, '//*[@id="firsname"]/span/input').send_keys(first_name)
+        self.driver.find_element(By.XPATH, '//*[@id="lastname"]/span/input').send_keys(last_name)
+        self.driver.find_element(By.XPATH, '//*[@id="createAccount"]/button/span/span/hrb-text').click()
+        self.driver.find_element(By.XPATH, '//*[@id="ciamElmnt"]/app-ca-two-step-verification/app-app-layout/main/hrb-layout/hrb-card-content/hrb-link/a').click()
+        self.driver.find_element(By.XPATH, '//*[@id="accnt_success"]/button/span/span/hrb-text').click()
         logger.info(f"创建H&R账户完成")
 
     def start_on_your_taxes(self):
@@ -608,7 +609,7 @@ class AutoOperate(object):
         info_email = info_one["邮箱----密码"]
         email, password = info_email.split("----")
         # try:
-        self.register_email(email, info_one["账号"], info_one["密码"])
+        self.register_email(email, password, info_one["账号"], info_one["密码"], info_one["名"], info_one["姓"])
         # except Exception as e:
         #     logger.info("账号已存在，进入登录流程")
         #     self.home_to_login(info_one["账号"], info_one["密码"], email, password)
@@ -629,6 +630,12 @@ if __name__ == '__main__':
     # qrmhayfbsyc@hotmail.com CFQCPD76J
     operate = AutoOperate("127.0.0.1:59532")
     info_one, info_data = search_one_data()
+    try:
+        operate.run(info_one)
+    except:
+        import traceback
+        traceback.print_exc()
+        time.sleep(400)
     # operate.run(info_one)
     # operate.start_on_your_taxes()
     # operate.your_info(info_one["名"], info_one["姓"], info_one["生日"],

@@ -34,17 +34,17 @@ class Settings(object):
     PROXY_TYPE = env.str("PROXY_TYPE", "s5")
     PROXY = env.str("PROXY", "http")
 
-    MOBILEHOP_HOST = env.str("MOBILEHOP_HOST")
-    MOBILEHOP_PORT = env.str("MOBILEHOP_PORT")
-    MOBILEHOP_USER = env.str("MOBILEHOP_USER")
-    MOBILEHOP_PASSWORD = env.str("MOBILEHOP_PASSWORD")
-    MOBILEHOP_REFRESH = env.str("MOBILEHOP_REFRESH")
+    MOBILEHOP_HOST = env.str("MOBILEHOP_HOST", None)
+    MOBILEHOP_PORT = env.str("MOBILEHOP_PORT", None)
+    MOBILEHOP_USER = env.str("MOBILEHOP_USER", None)
+    MOBILEHOP_PASSWORD = env.str("MOBILEHOP_PASSWORD", None)
+    MOBILEHOP_REFRESH = env.str("MOBILEHOP_REFRESH", None)
 
-    GUYS_HOST = env.str("GUYS_HOST")
-    GUYS_PORT = env.str("GUYS_PORT")
-    GUYS_USER = env.str("GUYS_USER")
-    GUYS_PASSWORD = env.str("GUYS_PASSWORD")
-    GUYS_REFRESH = env.str("GUYS_REFRESH")
+    GUYS_HOST = env.str("GUYS_HOST", None)
+    GUYS_PORT = env.str("GUYS_PORT", None)
+    GUYS_USER = env.str("GUYS_USER", None)
+    GUYS_PASSWORD = env.str("GUYS_PASSWORD", None)
+    GUYS_REFRESH = env.str("GUYS_REFRESH", None)
 
 
 settings = Settings()

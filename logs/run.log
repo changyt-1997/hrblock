@@ -1147,3 +1147,14 @@
 2023-04-22 23:10:31.944 | INFO     | core.logger_info:info:25 - 等待指纹浏览器连接网络.........
 2023-04-22 23:10:42.554 | INFO     | core.logger_info:info:25 - 开始运行程序
 2023-04-22 23:10:42.558 | INFO     | core.logger_info:info:25 - 浏览器地址信息：127.0.0.1:63712
+2023-07-19 21:11:41.039 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-07-19 21:11:48.575 | INFO     | core.logger_info:info:25 - 检测：Accept Cookies  不在当前页面
+2023-07-19 21:12:29.809 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:cjndnx4ean7@hotmail.com, 用户名：mMpihD8y5Dki
+2023-07-19 21:16:24.809 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-07-19 21:16:27.309 | INFO     | core.logger_info:info:25 - 检测：Accept Cookies  不在当前页面
+2023-07-19 21:18:24.402 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-07-19 21:18:26.809 | INFO     | core.logger_info:info:25 - 检测：Accept Cookies  不在当前页面
+2023-07-19 21:21:39.804 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-07-19 21:21:42.084 | INFO     | core.logger_info:info:25 - 检测：Accept Cookies  不在当前页面
+2023-07-19 21:23:19.331 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-07-19 21:23:21.609 | INFO     | core.logger_info:info:25 - 检测：Accept Cookies  不在当前页面
