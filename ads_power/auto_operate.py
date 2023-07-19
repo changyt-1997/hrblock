@@ -1,12 +1,16 @@
 import random
 import time
 from io import BytesIO
+from selenium.webdriver.support import expected_conditions as EC
+
 import pytesseract
 import retrying
 from aip import AipOcr
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from PIL import Image, ImageFilter, ImageEnhance
+from selenium.webdriver.support.wait import WebDriverWait
+
 from core.config import settings
 from core.error_info import ExistsNameException, SSNisUseException
 from core.information import search_one_data
@@ -49,10 +53,11 @@ class AutoOperate(object):
             target_element = self.driver.find_element('css selector', 'button[data-automation-action="HrbButton_12"]')
             # Perform the click using JavaScript
             self.driver.execute_script("arguments[0].click();", target_element)
+            self.accept_cookies()
         # self.driver.find_element(By.XPATH,    //*[@id="ciamElmnt"]/app-user-lookup/app-app-layout/main/hrb-layout/hrb-card-content/hrb-button/button
 
     def accept_cookies(self):
-        if self.is_exist("Accept Cookies"):
+        if self.is_exist("We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”"):
             try:
                 logger.info(f"正在同意set cookie")
                 self.driver.find_element(By.XPATH, '//*[@id="onetrust-accept-btn-handler"]').click()
@@ -70,19 +75,20 @@ class AutoOperate(object):
         self.verify_code(email_name, email_pwd)
 
     def verify_code(self, email_name, email_pwd, depth=0):
+        time.sleep(30)
         code = get_mail(email_name, email_pwd)
         if not code:
             logger.info(f"获取验证码超时！！！{email_name}")
             raise SystemExit
-        self.driver.find_element(By.XPATH, '//*[@id="oobField"]/span/input').clear(code)
-        self.driver.find_element(By.XPATH, '//*[@id="siEmailSCode"]/span/input').send_keys(code)
+        self.driver.find_element(By.XPATH, '//*[@id="oobField"]/span/input').clear()
+        self.driver.find_element(By.XPATH, '//*[@id="oobField"]/span/input').send_keys(code)
         if self.is_exist("Please review the following information. "):
             if depth > 5:
                 raise SystemExit
             self.verify_code(email_name, email_pwd, depth + 1)
 
     def register_email(self, email, email_pwd, username, password, first_name, last_name):
-        logger.info(f"创建H&R账户：邮箱:{email}, 用户名：{username}")
+        logger.info(f"创建H&R账户：邮箱:{email}, 用户名：{username}， 密码：{email_pwd}")
         self.driver.find_element(By.XPATH, '//*[@name="email"]/span/input').send_keys(email)
         self.driver.find_element(By.XPATH, '//*[@id="password"]/span/input').send_keys(password)
         self.driver.find_element(By.XPATH, '//*[@id="confirmPassword"]/span/input').send_keys(password)
@@ -90,14 +96,30 @@ class AutoOperate(object):
         # Perform the click using JavaScript
         self.driver.execute_script("arguments[0].click();", target_element)
         # self.driver.find_element(By.XPATH, '//*[@name="agreePolicy"]/label/span/span').click()
-        self.driver.find_element(By.XPATH, '//*[@id="btn_createaccount"]/button/span/span/hrb-text').click()
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="btn_createaccount"]/button')))
+        try:
+            time.sleep(10)
+            self.driver.find_element(By.XPATH, '//*[@id="btn_createaccount"]/button').click()
+        except:
+            raise ExistsNameException("重复的email")
+
         time.sleep(3)
         self.verify_code(email, email_pwd)
-        self.driver.find_element(By.XPATH, '//*[@id="firsname"]/span/input').send_keys(first_name)
-        self.driver.find_element(By.XPATH, '//*[@id="lastname"]/span/input').send_keys(last_name)
-        self.driver.find_element(By.XPATH, '//*[@id="createAccount"]/button/span/span/hrb-text').click()
+        time.sleep(10)
+        self.driver.find_element(By.XPATH, '//input[@name="first_name"]').send_keys(first_name[:1])
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, '//input[@name="first_name"]').send_keys(first_name[1:2])
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, '//input[@name="first_name"]').send_keys(first_name[2:])
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, '//input[@name="Last name"]').send_keys(" ")
+        self.driver.find_element(By.XPATH, '//input[@name="Last name"]').send_keys(last_name)
+
+        self.driver.find_element(By.XPATH, '//*[@id="createAccount"]/button').click()
+
         self.driver.find_element(By.XPATH, '//*[@id="ciamElmnt"]/app-ca-two-step-verification/app-app-layout/main/hrb-layout/hrb-card-content/hrb-link/a').click()
-        self.driver.find_element(By.XPATH, '//*[@id="accnt_success"]/button/span/span/hrb-text').click()
+        self.driver.find_element(By.XPATH, '//*[@id="accnt_success"]/button').click()
         logger.info(f"创建H&R账户完成")
 
     def start_on_your_taxes(self):
@@ -381,14 +403,15 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="menuPanel"]/ul/li[4]').click()
             time.sleep(2)
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock3"]/a').click()
-        self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock109"]/a').click()
+        # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock109"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[2]/div[2]/a').click()
-        # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="TextBlockIsBasket"]/a').click()
+        self.driver.find_element(By.XPATH, '//*[@id="TextBlockNextButtonText"]').click()
+        # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()  //*[@id="PageFooter1"]/div/div[2]/div[2]/a   //*[@id="btnNext"]
+        # self.driver.find_element(By.XPATH, '//*[@id="TextBlockIsBasket"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         if age == "common":
-            # How do you want to receive your federal refund?
+            # How do you want to receive your federal refund?    //*[@id="XRadioButtonPaperCheckOption"]  //*[@id="PageFooter1"]/div/div[1]/div[2]/a   //*[@id="btnNext"]   //*[@id="btnNext"]   //*[@id="btnNext"]
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPaperCheckOption"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
 
@@ -608,6 +631,7 @@ class AutoOperate(object):
         self.home_to_create_an_account()
         info_email = info_one["邮箱----密码"]
         email, password = info_email.split("----")
+        print(info_one["名"], info_one["姓"])
         # try:
         self.register_email(email, password, info_one["账号"], info_one["密码"], info_one["名"], info_one["姓"])
         # except Exception as e:
@@ -663,3 +687,4 @@ if __name__ == '__main__':
     # res_image = client.basicAccurate(result)
     # print(res_image)
     # print(res_image["words_result"][0]["words"])
+    # 程序运行失败：Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="XFormatTextBlock109"]/a"}
