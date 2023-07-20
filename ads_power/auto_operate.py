@@ -580,11 +580,11 @@ class AutoOperate(object):
                 date_of_birth = f"{time_info[1]}/{time_info[2]}/{time_info[0]}"
                 year = int(time_info[0])
         age = ""
-        if year >= 2000:
+        if 2006 >= year >= 1996:
             age = "early"
-        elif 1956 >= year:
+        elif 1958 >= year >= 1930:
             age = "old"
-        elif 1999 >= year >= 1957:
+        elif 1995 >= year >= 1959:
             age = "common"
         logger.info(f"检测到信息为：{age}")
         return date_of_birth, age
