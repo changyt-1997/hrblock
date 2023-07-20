@@ -114,6 +114,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//input[@name="first_name"]').send_keys(first_name[2:])
         time.sleep(5)
         self.driver.find_element(By.XPATH, '//input[@name="Last name"]').send_keys(" ")
+        time.sleep(5)
         self.driver.find_element(By.XPATH, '//input[@name="Last name"]').send_keys(last_name)
 
         self.driver.find_element(By.XPATH, '//*[@id="createAccount"]/button').click()
@@ -581,9 +582,9 @@ class AutoOperate(object):
         age = ""
         if year >= 2000:
             age = "early"
-        elif 1958 >= year:
+        elif 1956 >= year:
             age = "old"
-        elif 1999 >= year >= 1959:
+        elif 1999 >= year >= 1957:
             age = "common"
         logger.info(f"检测到信息为：{age}")
         return date_of_birth, age

@@ -1395,3 +1395,32 @@
 2023-07-20 02:13:17.827 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
 2023-07-20 02:13:17.827 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:censapekev@hotmail.com, 用户名：TI3OiPzLGA4BJ， 密码：PUsaHzFH41
 2023-07-20 02:14:04.828 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-07-20 18:39:17.153 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-07-20 18:39:37.244 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-07-20 18:39:50.623 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:censapekev@hotmail.com, 用户名：TI3OiPzLGA4BJ， 密码：PUsaHzFH41
+2023-07-20 18:40:41.582 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-07-20 18:42:32.071 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-07-20 18:42:49.347 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-07-20 18:43:07.094 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:censapekev@hotmail.com, 用户名：TI3OiPzLGA4BJ， 密码：PUsaHzFH41
+2023-07-20 18:43:56.149 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-07-20 18:44:30.295 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-07-20 18:44:30.296 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-07-20 18:47:50.059 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-07-20 18:48:04.116 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-07-20 18:48:30.838 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-07-20 18:48:58.923 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-07-20 18:51:29.538 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-07-20 18:51:39.595 | INFO     | core.logger_info:info:25 - 检测：If you need to change your SSNs:  不在当前页面
+2023-07-20 18:51:52.236 | INFO     | core.logger_info:info:25 - 检测：All your hard work has paid off!  在当前页面
+2023-07-20 18:51:52.236 | INFO     | core.logger_info:info:25 - 开始识别验证码
+2023-07-20 18:51:54.299 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：2
+2023-07-20 18:51:56.350 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：3
+2023-07-20 18:51:58.389 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：4
+2023-07-20 18:52:00.436 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：5
+2023-07-20 18:52:02.479 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：6
+2023-07-20 18:52:04.523 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：7
+2023-07-20 18:52:06.558 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：8
+2023-07-20 18:52:08.603 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：9
+2023-07-20 18:52:10.641 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：10
+2023-07-20 18:52:55.308 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-07-20 18:52:55.308 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
