@@ -9,3 +9,7 @@ class NotDataException(Exception):
 class SSNisUseException(Exception):
     pass
 
+
+class VerifyCodeException(Exception):
+    pass
+

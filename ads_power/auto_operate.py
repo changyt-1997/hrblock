@@ -12,7 +12,7 @@ from PIL import Image, ImageFilter, ImageEnhance
 from selenium.webdriver.support.wait import WebDriverWait
 
 from core.config import settings
-from core.error_info import ExistsNameException, SSNisUseException
+from core.error_info import ExistsNameException, SSNisUseException, VerifyCodeException
 from core.information import search_one_data
 from core.hotemail import get_mail
 from core.logger_info import logger
@@ -79,12 +79,12 @@ class AutoOperate(object):
         code = get_mail(email_name, email_pwd)
         if not code:
             logger.info(f"获取验证码超时！！！{email_name}")
-            raise SystemExit
+            raise VerifyCodeException("获取验证码超时")
         self.driver.find_element(By.XPATH, '//*[@id="oobField"]/span/input').clear()
         self.driver.find_element(By.XPATH, '//*[@id="oobField"]/span/input').send_keys(code)
         if self.is_exist("Please review the following information. "):
             if depth > 5:
-                raise SystemExit
+                raise VerifyCodeException("获取验证码超时")
             self.verify_code(email_name, email_pwd, depth + 1)
 
     def register_email(self, email, email_pwd, username, password, first_name, last_name):
