@@ -415,32 +415,8 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPaperCheckOption"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
 
-            # self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonDDOption"]').click()
-            # self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
-            # amount = self.driver.find_element(By.XPATH, '//*[@id="TextBlock2"]').text
-            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
-            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
-            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox3"]').send_keys(amount)
-            # # select
-            # self.driver.find_element(By.ID, "XListBox1-shdo").click()
-            # if info_one["account_type"] == "Savings":
-            #     self.driver.find_element(By.ID, "list-option2").click()
-            # else:
-            #     self.driver.find_element(By.ID, "list-option1").click()
-            # # self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxOPTBOND"]').click()
-            # # self.driver.find_element(By.XPATH, '//*[@id="XCheckBoxOPTCHECK"]').click()
-            # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-            #
-            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
-            # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))   //*[@id="XRadioButtonPinAvailable"]
-            # //*[@id="btnNext"]   //*[@id="btnNext"]   //*[@id="btnNext"]  //*[@id="XRadioButtonPinAvailable"]
         else:
             pass
-            # try:
-            #     self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-            # except:
-            #     self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonShowZeroBalance"]').click()
-            # self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
 
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
