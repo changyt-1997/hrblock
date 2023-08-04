@@ -9,12 +9,13 @@ from aip import AipOcr
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from PIL import Image, ImageFilter, ImageEnhance
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
 from core.config import settings
 from core.error_info import ExistsNameException, SSNisUseException, VerifyCodeException
 from core.information import search_one_data
-from core.hotemail import get_mail
+from core.hotemail import get_mail_hr
 from core.logger_info import logger
 from core.zip_info import get_zip_info, get_ein_info
 
@@ -76,7 +77,7 @@ class AutoOperate(object):
 
     def verify_code(self, email_name, email_pwd, depth=0):
         time.sleep(30)
-        code = get_mail(email_name, email_pwd)
+        code = get_mail_hr(email_name, email_pwd)
         if not code:
             logger.info(f"获取验证码超时！！！{email_name}")
             raise VerifyCodeException("获取验证码超时")
@@ -146,8 +147,14 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxlast_t"]').send_keys(last_name)
         date_of_birth, age = self.handle_date(birthday)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxdob_t"]').send_keys(date_of_birth)
-        self.driver.find_element(By.ID, "XListBoxxmaritalStatus-shdo").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".span6:nth-child(2) #list-option1").click()
+
+        self.driver.find_element(By.XPATH, '//*[@id="XListBoxxmaritalStatus-shdo"]').click()
+        self.driver.find_element(By.XPATH, "/html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/ul/li[2]").click()
+        # //*[@id="XListBoxxmaritalStatus-shdo"]    //*[@id="list-option1"]  //ul[@id="select-list"]/option
+        # select = Select(select_element)    /html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/ul/li[2]
+        # select.select_by_visible_text("Single")
+        # self.driver.find_element(By.CSS_SELECTOR, ".span6:nth-child(2) #list-option1").click()
+
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPSSN"]').send_keys(ssn)
@@ -233,7 +240,7 @@ class AutoOperate(object):
         else:
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrbSingleStatusN"]').click()
             # 处理不选择学生
-        self.start_w_2(zip_number, info_one, age)
+        self.start_w_2(zip_number, info_one, age, ssn)
         self.send_group(age, info_one["工作"], info_one)
 
     def juvenile(self):
@@ -252,7 +259,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
 
-    def start_w_2(self, zip_number, info_one, age):
+    def start_w_2(self, zip_number, info_one, age, ssn):
         logger.info(f"开始填写w-2表单")
         # W-2
         try:
@@ -277,12 +284,12 @@ class AutoOperate(object):
         except:
             self.driver.find_element(By.XPATH, '//*[@id="cardActionPanel"]/a').click()
         try:
-            self.w_2_table(zip_number, info_one, age)
+            self.w_2_table(zip_number, info_one, age, ssn)
         except:
             self.driver.refresh()
-            self.w_2_table(zip_number, info_one, age)
+            self.w_2_table(zip_number, info_one, age, ssn)
 
-    def w_2_table(self, zip_number, info_one, age):
+    def w_2_table(self, zip_number, info_one, age, ssn):
         print(zip_number)
         # //*[@id="cardActionPanel"]/a
         emp_name, emp_number, emp_address = info_one["公司名称"], info_one["公司编号"], info_one["公司地址"]
@@ -298,6 +305,11 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_ename"]').send_keys(emp_name)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_eaddress"]').send_keys(emp_address)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxBC_EZIP"]').send_keys(zip_number)
+
+        # ssn
+        if self.is_exist("Employee's Information"):
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxEmployeeValidSSN"]').send_keys(ssn)
+
         # Boxes
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxW2_wages"]').send_keys(int(info_one[1]))  # 1
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxW2_Fed_WH"]').send_keys(int(info_one[2]))  # 2
@@ -306,7 +318,30 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxW2_Medicare_wages"]').send_keys(int(info_one[5]))  # 5
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxW2_Medicare_WH"]').send_keys(int(info_one[6]))  # 6
 
-        self.driver.find_element(By.XPATH, '//*[@id="XListBox3-shdo"]').send_keys(info_one[15])  # 15
+        # self.driver.find_element(By.XPATH, '//*[@id="XListBox3-shdo"]').click()  # 15
+        # ul_element = self.driver.find_element(By.XPATH, '/html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/fieldset[7]/div[1]/div/div/div/div/table/tbody/tr[2]/td[2]/div/div/div/ul')
+        result = ['Choose', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
+                  'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana',
+                  'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan',
+                  'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+                  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Northern Marianas', 'Ohio',
+                  'Oklahoma', 'Oregon', 'Pennsylvania', 'Puerto Rico', 'Rhode Island', 'South Carolina', 'South Dakota',
+                  'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Virgin Islands(US)', 'Washington',
+                  'Washington DC', 'West Virginia', 'Wisconsin', 'Wyoming']
+        # dex = result.index(info_one[15]) * 2
+        # self.driver.execute_script(f"arguments[0].scrollTop += {dex};", ul_element)
+        # target_element = self.driver.find_element(By.XPATH, f'//*[@id="select-list"]/li[text() = "{info_one[15]}"]')
+        # while True:
+        #     if not target_element.is_displayed():
+        #         self.driver.execute_script("arguments[0].scrollTop += 10;", ul_element)
+        #         continue
+        #     break
+        # target_element.click()
+        # self.driver.execute_script("arguments[0].click();", target_element)   //*[@id="XListBox1-shdo"]
+        self.driver.find_element(By.ID, "XListBox3-shdo").click()
+        self.driver.find_element(By.CSS_SELECTOR, f".span3 #list-option{result.index(info_one[15])}").click()
+
+
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox5"]').send_keys(int(info_one[16]))  # 16
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox6"]').send_keys(int(info_one[17]))  # 17
         time.sleep(5)
@@ -412,8 +447,15 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         if age == "common":
-            # How do you want to receive your federal refund?    //*[@id="XRadioButtonPaperCheckOption"]  //*[@id="PageFooter1"]/div/div[1]/div[2]/a   //*[@id="btnNext"]   //*[@id="btnNext"]   //*[@id="btnNext"]
-            self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPaperCheckOption"]').click()
+            time.sleep(4)
+            self.driver.execute_script("window.scrollBy(0, 1000);")
+            # How do you want to receive your federal refund?   //*[@id="PageFooter1"]/div/div[1]/div[2]/a
+            try:
+                self.driver.find_element(By.ID, "XRadioButtonPaperCheckOption").click()
+            except:
+                target_element = self.driver.find_element(By.ID, "XRadioButtonPaperCheckOption")
+                self.driver.execute_script("arguments[0].click();", target_element)
+
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
 
         else:
@@ -582,9 +624,9 @@ class AutoOperate(object):
         age = ""
         if 2006 >= year >= 1996:
             age = "early"
-        elif 1958 >= year >= 1930:
+        elif 1957 >= year >= 1930:
             age = "old"
-        elif 1995 >= year >= 1959:
+        elif 1995 >= year >= 1958:
             age = "common"
         logger.info(f"检测到信息为：{age}")
         return date_of_birth, age

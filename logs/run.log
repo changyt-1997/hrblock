@@ -1424,3 +1424,145 @@
 2023-07-20 18:52:10.641 | INFO     | core.logger_info:info:25 - 识别失败，开始重试：10
 2023-07-20 18:52:55.308 | INFO     | core.logger_info:info:25 - 检测到信息为：common
 2023-07-20 18:52:55.308 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 00:42:49.296 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 00:43:02.972 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 00:43:21.098 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:finatafyrirz@hotmail.com, 用户名：nan， 密码：MIbTX1yt83
+2023-08-05 01:05:22.262 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 01:05:33.903 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 01:05:50.110 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:savaremalalo9@hotmail.com, 用户名：nan， 密码：lxzFpovZ35
+2023-08-05 01:06:39.633 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 01:07:16.218 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 01:07:16.218 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 01:10:39.415 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 01:10:46.428 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 01:11:18.901 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 01:11:26.285 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 01:11:38.506 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 01:18:33.296 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 01:18:45.062 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 01:19:09.092 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:indartjagbirp@hotmail.com, 用户名：nan， 密码：GbplqbeK35
+2023-08-05 01:20:02.243 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 01:20:40.236 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 01:20:40.237 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 01:24:31.389 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 01:24:41.499 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 01:25:03.841 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 01:25:10.577 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 01:25:19.709 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 01:26:42.345 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 01:27:34.459 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 01:28:05.549 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:dunphymekeree@hotmail.com, 用户名：nan， 密码：KzTgB0Ux04
+2023-08-05 01:29:04.784 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 01:30:18.736 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 01:30:18.736 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 01:31:25.119 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 01:31:25.681 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 01:31:33.474 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 01:31:37.794 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 01:34:42.518 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 01:44:22.961 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 01:55:49.241 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 01:56:09.384 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 01:56:30.163 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:dunphymekeree@hotmail.com, 用户名：nan， 密码：KzTgB0Ux04
+2023-08-05 01:57:26.106 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 01:57:48.828 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 01:58:04.301 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:zarayjurcanf@hotmail.com, 用户名：nan， 密码：emruRPUg71
+2023-08-05 01:58:59.949 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 01:59:38.360 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 01:59:38.360 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 02:03:19.808 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 02:03:34.796 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 02:03:59.409 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 02:04:05.767 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 02:10:17.957 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 02:21:22.593 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 02:21:41.388 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 02:21:57.366 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:hookscolyerc@hotmail.com, 用户名：nan， 密码：0QKPhUEQ86
+2023-08-05 02:22:45.333 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 02:23:18.869 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 02:23:18.869 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 02:26:16.452 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 02:26:27.148 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 02:26:53.099 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 02:27:00.253 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 02:36:50.084 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 02:37:09.713 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 02:37:26.122 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:serwainelleo@hotmail.com, 用户名：nan， 密码：c4mSLLMC10
+2023-08-05 02:38:20.583 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 02:38:56.556 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 02:38:56.556 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 02:42:19.227 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 02:42:31.518 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 02:42:55.446 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 02:43:03.495 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 02:46:11.834 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 02:55:59.362 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 03:00:26.675 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 03:00:38.550 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 03:00:56.130 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:dalateiewau@hotmail.com, 用户名：nan， 密码：erMEDGgK89
+2023-08-05 03:01:45.194 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 03:02:19.753 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 03:02:19.753 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 03:05:18.915 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 03:05:32.391 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 03:05:55.528 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 03:06:02.225 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 03:06:14.548 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 03:12:44.274 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 03:13:02.867 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 03:13:18.067 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:rhynshivid@hotmail.com, 用户名：nan， 密码：M29S2GlJ54
+2023-08-05 03:14:08.854 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 03:14:44.354 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 03:14:44.354 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 03:17:59.394 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 03:18:07.029 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 03:18:37.711 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 03:18:44.625 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 03:25:02.652 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 03:39:06.077 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 03:39:17.539 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 03:39:31.189 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:ijmkerscheur4@hotmail.com, 用户名：nan， 密码：BoYP1D3N05
+2023-08-05 03:40:24.320 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 03:41:02.289 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 03:41:02.289 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 03:44:40.431 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 03:44:54.588 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 03:45:17.000 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 03:45:23.918 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 03:45:32.332 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-08-05 03:56:04.030 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 03:56:22.022 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 03:56:36.033 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:jakaapersd9@hotmail.com, 用户名：nan， 密码：Oc7A7JtW69
+2023-08-05 03:57:34.510 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 03:58:12.185 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 03:58:12.185 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 04:02:14.585 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 04:02:24.737 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 04:02:52.376 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 04:02:58.954 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 04:03:07.474 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-08-05 04:20:44.386 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 04:20:56.524 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 04:21:10.046 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:waronambawinq@hotmail.com, 用户名：nan， 密码：40iu5zML47
+2023-08-05 04:21:58.635 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 04:22:31.319 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 04:22:31.319 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 04:25:58.956 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 04:26:10.869 | INFO     | core.logger_info:info:25 - 检测到信息为：old
+2023-08-05 04:26:33.875 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 04:26:40.880 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 04:26:52.053 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-08-05 04:34:31.260 | INFO     | core.logger_info:info:25 - 正在打开注册页面
+2023-08-05 04:34:52.035 | INFO     | core.logger_info:info:25 - 检测：We use tracking technologies for the correct functioning of our website.  If you click “allow” you are also permitting us to use targeted advertising technologies, if you click “decline” we will not use targeted advertising technologies.  If you would like to configure other preferences, click “customize settings.”  不在当前页面
+2023-08-05 04:35:08.655 | INFO     | core.logger_info:info:25 - 创建H&R账户：邮箱:flijakingsor@hotmail.com, 用户名：nan， 密码：HluxYXbv44
+2023-08-05 04:35:57.561 | INFO     | core.logger_info:info:25 - 检测：Please review the following information.   不在当前页面
+2023-08-05 04:36:31.817 | INFO     | core.logger_info:info:25 - 创建H&R账户完成
+2023-08-05 04:36:31.817 | INFO     | core.logger_info:info:25 - 进入用户信息填写流程
+2023-08-05 04:40:27.978 | INFO     | core.logger_info:info:25 - 开始填写个人信息
+2023-08-05 04:40:52.632 | INFO     | core.logger_info:info:25 - 检测到信息为：common
+2023-08-05 04:41:37.478 | INFO     | core.logger_info:info:25 - 开始填写w-2表单
+2023-08-05 04:41:54.083 | INFO     | core.logger_info:info:25 - 检测：Employee's Information  在当前页面
+2023-08-05 04:42:07.717 | INFO     | core.logger_info:info:25 - w-2表单填写完成
+2023-08-05 04:44:21.947 | INFO     | core.logger_info:info:25 - 检测：The IRS let us know that someone else has already filed with the same SSN as you.  不在当前页面
+2023-08-05 04:44:31.986 | INFO     | core.logger_info:info:25 - 检测：If you need to change your SSNs:  在当前页面
+2023-08-05 04:44:31.987 | INFO     | core.logger_info:info:25 - 该ssn已经被使用，程序结束

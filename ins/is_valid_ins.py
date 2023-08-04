@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 from ads_power import ads_power_instance, s5_proxy
 from core.config import settings
-from core.error_info import InsTryAgenException
+from core.error_info import InsTryAgenException, NotDataException
 from ins.read_file import search_one_data, change_value, search_index
 
 
@@ -49,30 +49,37 @@ class AutoOperateIns(object):
 
 
 def main():
-    print(f"开始创建指纹浏览器")
-    group_id = ads_power_instance.AdsPower.search_group_id(settings.ADS_GROUP_NAME)
-    if settings.PROXY_TYPE == "s5":
-        user_proxy_config = s5_proxy.get_proxy()
-    elif settings.PROXY_TYPE == "guys":
-        user_proxy_config = s5_proxy.get_proxy_guys()
-    elif settings.PROXY_TYPE == "mobilehop":
-        user_proxy_config = s5_proxy.get_proxy_mobilehop()
-    else:
-        user_proxy_config = None
-    result, data = search_one_data()
-
-    # 创建浏览器
-    user_id = ads_power_instance.AdsPower.create_user(f'ins-{str(result["电话"])}', group_id, user_proxy_config)
-    address = ads_power_instance.AdsPower.start_run_browser(user_id)
-    power = AutoOperateIns(address)
     while True:
-        if power.start_ins(result["电话"]):
+        try:
+            print(f"开始创建指纹浏览器")
+            group_id = ads_power_instance.AdsPower.search_group_id(settings.ADS_GROUP_NAME)
+            if settings.PROXY_TYPE == "s5":
+                user_proxy_config = s5_proxy.get_proxy()
+            elif settings.PROXY_TYPE == "guys":
+                user_proxy_config = s5_proxy.get_proxy_guys()
+            elif settings.PROXY_TYPE == "mobilehop":
+                user_proxy_config = s5_proxy.get_proxy_mobilehop()
+            else:
+                user_proxy_config = None
+            result, data = search_one_data()
 
-            change_value("无效", "is_completed", search_index(result["电话"], data))
-        else:
-            change_value("有效", "is_completed", search_index(result["电话"], data))
-        result, data = search_one_data()
+            # 创建浏览器
+            user_id = ads_power_instance.AdsPower.create_user(f'ins-{str(result["电话"])}', group_id, user_proxy_config)
+            address = ads_power_instance.AdsPower.start_run_browser(user_id)
+            power = AutoOperateIns(address)
+            while True:
+                if power.start_ins(result["电话"]):
 
+                    change_value("无效", "is_completed", search_index(result["电话"], data))
+                else:
+                    change_value("有效", "is_completed", search_index(result["电话"], data))
+                result, data = search_one_data()
+        except NotDataException:
+            print("筛选完毕")
+            break
+        except InsTryAgenException:
+            ads_power_instance.AdsPower.stop_browser(user_id)
+            ads_power_instance.AdsPower.delete_account([user_id])
 
 if __name__ == '__main__':
     ins = AutoOperateIns()
