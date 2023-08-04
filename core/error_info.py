@@ -13,3 +13,7 @@ class SSNisUseException(Exception):
 class VerifyCodeException(Exception):
     pass
 
+
+class InsTryAgenException(Exception):
+    pass
+
