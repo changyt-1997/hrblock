@@ -4,7 +4,7 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-
+from imaplib import IMAP4
 from ads_power import ads_power_instance, s5_proxy
 from core.config import settings
 from core.hotemail import get_mail_ins
@@ -118,6 +118,8 @@ def main():
         power = AutoOperateIns(address)
         ins_id = power.start_ins(result)
         change_value(ins_id, "ins_id", search_index(result["电话"], data))
+    except IMAP4.error:
+        change_value("邮件解码失败", "ins_id", search_index(result["电话"], data))
     except Exception as e:
         print(e)
         pass
