@@ -9,8 +9,8 @@ def get_proxy():
         proxy = requests.get(settings.S5PROXY_URL).text
         host, port = proxy.split(':')
         data = {"proxy_type": settings.PROXY, "proxy_host": host,
-                "proxy_port": port.strip(), "proxy_user": "ExemplWinke@gmail.com",
-                "proxy_password": "Qwe123321..", "proxy_soft": "other"}
+                "proxy_port": port.strip(), "proxy_user": settings.S5_USER,
+                "proxy_password": settings.S5_PWD, "proxy_soft": "other"}
         logger.info(f"成功获取s5代理")
         return data
     except Exception as e:

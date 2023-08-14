@@ -83,8 +83,8 @@ class AutoOperateIns(object):
         self.driver.execute_script("arguments[0].click();", element)
         # self.driver.find_element(By.XPATH, '//*[@id="submit-claim"]').click()
 
-        # /html/body/div[2]/div[2]/div/div[3]/button   /html/body/div[2]/div[2]/div/div[3]/button
-        self.driver.find_element(By.XPATH, '/html/body/div[5]/div/div/div[3]/button').click()
+        # /html/body/div[2]/div[2]/div/div[3]/button   /html/body/div[2]/div[2]/div/div[3]/button   /html/body/div[4]/div/div/div[3]/button
+        self.driver.find_element(By.XPATH, '/html/body/div[4]/div/div/div[3]/button').click()
         ins_id = self.driver.find_element(By.XPATH, '//*[@id="confirmation_correlation_id"]').text
         return ins_id
 
@@ -113,11 +113,13 @@ def main():
     # 创建浏览器
     user_id = ads_power_instance.AdsPower.create_user(f'ins-complete-{str(result["电话"])}', group_id, user_proxy_config)
     address = ads_power_instance.AdsPower.start_run_browser(user_id)
+    # address = ""
     try:
         power = AutoOperateIns(address)
         ins_id = power.start_ins(result)
         change_value(ins_id, "ins_id", search_index(result["电话"], data))
-    except:
+    except Exception as e:
+        print(e)
         pass
     ads_power_instance.AdsPower.stop_browser(user_id)
     ads_power_instance.AdsPower.delete_account([user_id])

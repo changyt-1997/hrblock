@@ -34,6 +34,8 @@ class Settings(object):
 
     PROXY_TYPE = env.str("PROXY_TYPE", "s5")
     PROXY = env.str("PROXY", "http")
+    S5_USER = env.str("S5_USER", "brainwshep@gmail.com")
+    S5_PWD = env.str("S5_PWD", "Qwe123321..")
 
     MOBILEHOP_HOST = env.str("MOBILEHOP_HOST", None)
     MOBILEHOP_PORT = env.str("MOBILEHOP_PORT", None)
