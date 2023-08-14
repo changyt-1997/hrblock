@@ -342,6 +342,7 @@ class AutoOperate(object):
         self.driver.find_element(By.CSS_SELECTOR, f".span3 #list-option{result.index(info_one[15])}").click()
 
 
+        # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox4"]').send_keys(emp_number)  # state ID number
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox5"]').send_keys(int(info_one[16]))  # 16
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox6"]').send_keys(int(info_one[17]))  # 17
         time.sleep(5)
@@ -449,15 +450,29 @@ class AutoOperate(object):
         if age == "common":
             time.sleep(4)
             self.driver.execute_script("window.scrollBy(0, 1000);")
-            # How do you want to receive your federal refund?   //*[@id="PageFooter1"]/div/div[1]/div[2]/a
+            # How do you want to receive your federal refund?   //*[@id="PageFooter1"]/div/div[1]/div[2]/a   //*[@id="XRadioButtonDDOption"]
             try:
-                self.driver.find_element(By.ID, "XRadioButtonPaperCheckOption").click()
+                self.driver.find_element(By.ID, "XRadioButtonDDOption").click()
             except:
-                target_element = self.driver.find_element(By.ID, "XRadioButtonPaperCheckOption")
+                target_element = self.driver.find_element(By.ID, "XRadioButtonDDOption")
                 self.driver.execute_script("arguments[0].click();", target_element)
-
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div[1]/div[2]/a').click()
 
+            amount = self.driver.find_element(By.XPATH, '//*[@id="TextBlock2"]').text
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox3"]').send_keys(amount)
+            # select
+            self.driver.find_element(By.ID, "XListBox1-shdo").click()
+            if info_one["account_type"] == "Savings":
+                self.driver.find_element(By.ID, "list-option2").click()
+            else:
+                self.driver.find_element(By.ID, "list-option1").click()
+
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox1"]').send_keys(self.handle_bank_number(int(info_one['transit_number'])))
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox2"]').send_keys(int(info_one['account_number']))   # //*[@id="XRadioButtonPinAvailable"]
+            self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         else:
             pass
 
