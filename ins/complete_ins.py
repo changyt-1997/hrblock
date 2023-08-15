@@ -76,6 +76,8 @@ class AutoOperateIns(object):
         self.driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/div/div[2]/div/div[2]/div/div/input').send_keys(code)
         self.driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/div/div[3]/button').click()
         time.sleep(10)
+        if self.is_exist("The code you have entered is not correct. Please reenter your verification code."):
+            raise IMAP4.error
         self.driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/div/div[3]/button').click()
 
         self.driver.switch_to.default_content()
@@ -122,7 +124,7 @@ def main():
         change_value("邮件解码失败", "ins_id", search_index(result["电话"], data))
     except Exception as e:
         print(e)
-        pass
+        change_value("失败", "ins_id", search_index(result["电话"], data))
     ads_power_instance.AdsPower.stop_browser(user_id)
     ads_power_instance.AdsPower.delete_account([user_id])
 

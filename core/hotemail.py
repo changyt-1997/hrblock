@@ -136,16 +136,17 @@ def get_mail_ins(username, password, depth=0):
             time.sleep(2)
             get_mail_ins(username, password, depth+1)
         print("未检查到验证码，且超出重试次数")
-        return None
+        raise imaplib.IMAP4.error
 
 
 if __name__ == '__main__':
     # eyrampierisa@hotmail.com----oZDNmmiZ19
     from imaplib import IMAP4
-    try:
-        code = get_mail_ins("racineduong7@hotmail.com", "pltZ1x28")
-    except IMAP4.error:
-        print("jiemashibai ")
+    # try:
+    #     code = get_mail_ins("racineduong7@hotmail.com", "pltZ1x28")
+    # except IMAP4.error:
+    #     print("jiemashibai ")
+    raise imaplib.IMAP4.error
     # print(code)
     # print(f"--{code}--")
     # print(type(code))
