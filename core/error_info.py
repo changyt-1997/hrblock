@@ -17,3 +17,7 @@ class VerifyCodeException(Exception):
 class InsTryAgenException(Exception):
     pass
 
+
+class RiskControlException(Exception):
+    pass
+

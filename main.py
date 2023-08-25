@@ -1,7 +1,7 @@
 import multiprocessing
 import time
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException, TimeoutException
-from core.error_info import ExistsNameException, NotDataException, SSNisUseException
+from core.error_info import ExistsNameException, NotDataException, SSNisUseException, RiskControlException
 from core.information import search_one_data, change_value, search_index
 from ads_power import ads_power_instance, s5_proxy, auto_operate
 from core.config import settings
@@ -70,6 +70,11 @@ def main(address, info_data, info_one, user_id):
     except TimeoutException as no_such:
         logger.error(f"程序运行失败：{no_such}")
         change_value("Timeout Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
+        ads_power_instance.AdsPower.stop_browser(user_id)
+        ads_power_instance.AdsPower.delete_account([user_id])
+    except RiskControlException as risk:
+        logger.error(f"程序运行失败：{risk}")
+        # change_value("Timeout Error", "is_completed", search_index(info_one["邮箱----密码"], info_data))
         ads_power_instance.AdsPower.stop_browser(user_id)
         ads_power_instance.AdsPower.delete_account([user_id])
     except Exception as e:

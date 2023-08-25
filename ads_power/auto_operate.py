@@ -1,4 +1,5 @@
 import random
+import signal
 import time
 from io import BytesIO
 from selenium.webdriver.support import expected_conditions as EC
@@ -11,9 +12,11 @@ from selenium.webdriver.common.by import By
 from PIL import Image, ImageFilter, ImageEnhance
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 
+from ads_power.s5_proxy import get_proxy_guys
 from core.config import settings
-from core.error_info import ExistsNameException, SSNisUseException, VerifyCodeException
+from core.error_info import ExistsNameException, SSNisUseException, VerifyCodeException, RiskControlException
 from core.information import search_one_data
 from core.hotemail import get_mail_hr
 from core.logger_info import logger
@@ -37,7 +40,14 @@ class AutoOperate(object):
 
     def home_to_create_an_account(self):
         logger.info(f"正在打开注册页面")
-        self.driver.get("https://www.hrblock.com/")
+        try:
+            self.driver.get("https://www.hrblock.com/")
+        except:
+            try:
+                self.driver.get("https://www.hrblock.com/")
+            except:
+                get_proxy_guys()
+                self.driver.get("https://www.hrblock.com/")
         self.accept_cookies()
         try:
             self.driver.find_element(
@@ -90,6 +100,8 @@ class AutoOperate(object):
 
     def register_email(self, email, email_pwd, username, password, first_name, last_name):
         logger.info(f"创建H&R账户：邮箱:{email}, 用户名：{username}， 密码：{email_pwd}")
+        if self.is_exist("We've got your back."):
+            raise RiskControlException("风控错误，重试！")
         self.driver.find_element(By.XPATH, '//*[@name="email"]/span/input').send_keys(email)
         self.driver.find_element(By.XPATH, '//*[@id="password"]/span/input').send_keys(password)
         self.driver.find_element(By.XPATH, '//*[@id="confirmPassword"]/span/input').send_keys(password)
@@ -99,6 +111,8 @@ class AutoOperate(object):
         # self.driver.find_element(By.XPATH, '//*[@name="agreePolicy"]/label/span/span').click()
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="btn_createaccount"]/button')))
+        if self.is_exist("Account already exists for this email."):
+            raise ExistsNameException("重复的email")
         try:
             time.sleep(10)
             self.driver.find_element(By.XPATH, '//*[@id="btn_createaccount"]/button').click()
@@ -116,7 +130,11 @@ class AutoOperate(object):
         time.sleep(5)
         self.driver.find_element(By.XPATH, '//input[@name="Last name"]').send_keys(" ")
         time.sleep(5)
-        self.driver.find_element(By.XPATH, '//input[@name="Last name"]').send_keys(last_name)
+        try:
+            for i in last_name:
+                self.driver.find_element(By.XPATH, '//input[@name="Last name"]').send_keys(i)
+        except:
+            self.driver.find_element(By.XPATH, '//input[@name="Last name"]').send_keys(last_name)
 
         self.driver.find_element(By.XPATH, '//*[@id="createAccount"]/button').click()
 
@@ -126,7 +144,11 @@ class AutoOperate(object):
 
     def start_on_your_taxes(self):
         logger.info(f"进入用户信息填写流程")
-        self.driver.find_element(By.XPATH, '//*[@id="imbHero"]/button').click()
+        try:
+            self.driver.find_element(By.XPATH, '//*[@id="imbHero"]/button').click()
+        except:
+            self.driver.refresh()
+            self.driver.find_element(By.XPATH, '//*[@id="imbHero"]/button').click()
         self.driver.find_element(By.XPATH, '//*[@id="imbPsBtnFour"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="imbPsNext"]/button').click()
         # //*[@id="btnNext"]
@@ -147,15 +169,16 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxlast_t"]').send_keys(last_name)
         date_of_birth, age = self.handle_date(birthday)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxdob_t"]').send_keys(date_of_birth)
-
         self.driver.find_element(By.XPATH, '//*[@id="XListBoxxmaritalStatus-shdo"]').click()
-        self.driver.find_element(By.XPATH, "/html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/ul/li[2]").click()
-        # //*[@id="XListBoxxmaritalStatus-shdo"]    //*[@id="list-option1"]  //ul[@id="select-list"]/option
-        # select = Select(select_element)    /html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/ul/li[2]
-        # select.select_by_visible_text("Single")
-        # self.driver.find_element(By.CSS_SELECTOR, ".span6:nth-child(2) #list-option1").click()
-
+        try:
+            self.driver.find_element(By.XPATH, "/html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/ul/li[2]").click()
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxdob_t"]').send_keys(date_of_birth)
+        except:
+            self.driver.find_element(By.XPATH,
+                                     "/html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/ul/li[2]").click()
+            self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxdob_t"]').send_keys(date_of_birth)
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPSSN"]').send_keys(ssn)
         except:
@@ -177,6 +200,7 @@ class AutoOperate(object):
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPAddress"]').send_keys(address)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPZip"]').send_keys(zip_number)
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbTPAddress"]').click()
+        self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxtbInCareOf"]').send_keys(info_one["工作"])
         self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonrblOtherResidentStateY"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
@@ -204,8 +228,14 @@ class AutoOperate(object):
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
             # Let's personalize your H&R Block experience
-            full_name = self.driver.find_element(By.XPATH, '//*[@id="insText_id87"]').text
-            today_date = self.driver.find_element(By.XPATH, '//*[@id="insText_id92"]').text
+            try:
+                full_name = self.driver.find_element(By.XPATH, '//*[@id="insText_id87"]').text
+            except:
+                full_name = self.driver.find_element(By.XPATH, '/html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div[2]/div[4]/div[1]/div/p').text
+            try:
+                today_date = self.driver.find_element(By.XPATH, '//*[@id="insText_id92"]').text
+            except:
+                today_date = self.driver.find_element(By.XPATH, '/html/body/div[14]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div[2]/div[4]/div[2]/div/p').text
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxTPFullName"]').send_keys(full_name)
             self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxTPCurrentDate"]').send_keys(today_date)
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[3]/a').click()
@@ -261,7 +291,7 @@ class AutoOperate(object):
 
     def start_w_2(self, zip_number, info_one, age, ssn):
         logger.info(f"开始填写w-2表单")
-        # W-2
+        # W-2  //*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a
         try:
             self.driver.find_element(By.XPATH, '//a[@class="nextButton"]').click()
         except:
@@ -274,8 +304,12 @@ class AutoOperate(object):
         try:
             self.driver.find_element(By.XPATH, '//*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a').click()
         except:
-            self.driver.find_element(By.XPATH,
-                                     '/html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a').click()
+            try:
+                self.driver.find_element(By.XPATH,
+                                         '/html/body/div[13]/div/div[4]/div[1]/div[4]/div[1]/div/div/div/div[2]/a').click()
+            except:
+                pass
+
             self.driver.find_element(By.XPATH, '//*[@id="pageBodyInnerDiv"]/div[2]/div[2]/div[1]/div/a').click()
         time.sleep(2)
         try:
@@ -345,13 +379,14 @@ class AutoOperate(object):
         # self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox4"]').send_keys(emp_number)  # state ID number
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox5"]').send_keys(int(info_one[16]))  # 16
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox6"]').send_keys(int(info_one[17]))  # 17
+        self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBox6"]').click()  # 17
         time.sleep(5)
         try:
             self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()
         except:
             self.driver.find_element(By.XPATH, '//*[@id="PageFooter1"]/div/div/div[2]/a').click()
         # time.sleep(10)
-        # if self.is_exist("EIN entry is not in the normal range"):
+        # if self.is_exist("EIN entry is not in the normal range"):   - 程序运行失败：Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="insText_id87"]"}
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').clear()
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_ename"]').clear()
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_eaddress"]').clear()
@@ -361,7 +396,7 @@ class AutoOperate(object):
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbb1"]').send_keys(emp_number)
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_ename"]').send_keys(emp_name)
         #     self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBoxbc_eaddress"]').send_keys(emp_address)
-        #     self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()  //*[@id="btnNext"]
+        #     self.driver.find_element(By.XPATH, '//*[@id="TextBlocktbNext"]').click()  //*[@id="btnNext"]     //*[@id="btnNext"]
         try:
             self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
         except:
@@ -492,7 +527,7 @@ class AutoOperate(object):
         try:
             self.driver.find_element(By.XPATH, '//*[@id="XRadioButtonPinAvailable"]').click()
 
-            # self.driver.find_element(By.XPATH, '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div/div[2]/div/div/div/input').click()
+            # self.driver.find_element(By.XPATH, '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div/div[2]/div/div/div/input').click()   //*[@id="XRadioButtonPinAvailable"]
         except:
             try:
                 self.driver.find_element(By.XPATH, '/html/body/div[13]/div/div[4]/div[1]/div[3]/div[5]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div/div[2]/div/div').click()
@@ -551,11 +586,31 @@ class AutoOperate(object):
             time.sleep(2)
             logger.info(f"识别失败，开始重试：{count_while}")
 
+        self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()   #  //*[@id="btnNext"]  //*[@id="btnNext"]  //*[@id="liveForm"]/div/div[2]/neb-form-footer/div/div[1]/div/div/div/div/button[1]   //*[@id="XFormatTextBlock14"]/a
+        # self.perform_selenium_operation()
         self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
-        self.driver.find_element(By.XPATH, '//*[@id="btnNext"]').click()
+        self.perform_selenium_operation()
         self.driver.find_element(By.XPATH, '//*[@id="XFormatTextBlock14"]/a').click()
         self.driver.find_element(By.XPATH, '//*[@id="XHyperlink2"]').click()
         # TODO 记录到达最后一步
+
+    def timeout_handler(self, signum, frame):
+        raise TimeoutException("Selenium operation timed out")
+
+    def perform_selenium_operation(self):
+        try:
+            # 在操作内设置自己的计时器
+            signal.signal(signal.SIGALRM, self.timeout_handler)
+            signal.alarm(10)  # 设置操作的超时时间为10秒
+
+            # 执行 Selenium 操作
+            # 如果操作超时，会触发 TimeoutException 异常
+            self.driver.find_element(By.XPATH, '//*[@id="liveForm"]/div/div[2]/neb-form-footer/div/div[1]/div/div/div/div/button[1]').click()  # 示例操作：打开一个网页
+
+            # 如果操作在规定时间内完成，取消超时计时器
+            signal.alarm(0)
+        except TimeoutException:
+            print("Selenium operation timed out")
 
     def baidu_get_img_code(self, img_element, option=True, num=0):
         client = AipOcr(settings.APP_ID, settings.API_KEY, settings.SECRET_KEY)
@@ -662,7 +717,14 @@ class AutoOperate(object):
         return code
 
     def run(self, info_one):
-        self.home_to_create_an_account()
+        for i in range(6):
+            try:
+                self.home_to_create_an_account()
+                break
+            except:
+                if i == 5:
+                    raise TimeoutException("打开注册页面超时")
+                pass
         info_email = info_one["邮箱----密码"]
         email, password = info_email.split("----")
         print(info_one["名"], info_one["姓"])
